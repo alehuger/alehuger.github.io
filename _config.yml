@@ -1,0 +1,9 @@
+info:
+  name: Auguste Lehuger
+  tagline: Machine Learning Developer
+  date_format: "%b %-d, %Y"
+
+  social_links:
+    email: auguste.lehuger@polytechnique.edu
+    github:  alehuger
+    linkedIn: in/alehuger # format: locale/username

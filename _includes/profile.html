@@ -1,0 +1,21 @@
+<section class="profile-container">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <img src="{{ "/assets/docs/profile.png" | relative_url }}" alt="PP" class="img-fluid">
+        </div>
+    </div>
+    <div class="row">
+        <h4><a class="" href="/about.html"> {{ site.info.name }} </a> </h2>
+    </div>
+    
+    <p class="tagline"> {{ site.info.tagline }}</p>
+    <i class="icon-map-marker"></i>
+    <p> <span class="ec ec-round-pushpin"></span> London, UK </p>
+    <div class="row">   
+        <a href="https://github.com/{{ site.info.social_links.github }}"><i class="icon-github-circled"></i></a>
+        <a href="https://linkedin.com/{{ site.info.social_links.linkedIn }}"><i class="icon-linkedin-squared"></i></a>
+    </div>
+    
+    <p>&copy; 2019</p>
+</section>
+
