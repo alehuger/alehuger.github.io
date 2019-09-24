@@ -3,7 +3,7 @@
 	"file": "styles.css",
 	"sources": [
 		"styles.scss",
-		"_sass/main.scss"
+		"../alehuger.github.io/_sass/main.scss"
 	],
 	"sourcesContent": [
 		"@import \"main\";",
