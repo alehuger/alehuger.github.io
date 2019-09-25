@@ -4,27 +4,27 @@ body {
 
 
 .tabs{
-font-family: 'Titillium Web', sans-serif;
-display: flex;
-flex-direction: column;
-align-items: center;
-height: 18vh;
-justify-content: flex-start;
-position: relative;
-background: #eee;
-    text-align: center;
-    padding: 0 2em;
-h1 {
-    color: whitesmoke;
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1rem;
-}
-h3 {    
-    font-size: 1rem;
-    letter-spacing: 0.3rem;
-    opacity: 0.6;
-}
+    font-family: 'Titillium Web', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 18vh;
+    justify-content: flex-start;
+    position: relative;
+    background: #eee;
+        text-align: center;
+        padding: 0 2rem;
+    h1 {
+        color: whitesmoke;
+        font-size: 1.8rem;
+        margin: 0;
+        letter-spacing: 1rem;
+    }
+    h3 {    
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+        opacity: 0.6;
+    }
 }
 
 .tabs-container {
@@ -59,20 +59,6 @@ letter-spacing: 0.1rem;
 }
 }
 
-@media (min-width: 800px) {
-.tabs{
-h1 {
-    font-size: 3rem;
-}
-h3 {
-    font-size: 1rem;
-}
-}
-.tab {
-    font-size: 1rem;
-}
-}
-
 .profile-container {
     font-family: 'Titillium Web', sans-serif;
     display: flex;
@@ -90,7 +76,7 @@ h3 {
         letter-spacing: 1rem;
     }
     img {
-        padding: 10px;
+        padding: 0.75em;
     }
     img:hover {
         filter: brightness(1.25);
@@ -222,12 +208,6 @@ h3 {
     margin-right: 10px
 }
 
-@media screen and (max-width: 768px) {
-    .post-categories li {
-        margin-top: 5px
-    }
-}
-
 .post-date {
     margin-right: 10px;
     color: #555
@@ -260,14 +240,6 @@ h3 {
 
 #posts-margin{
     margin-top: 3em;
-}
-
-@media screen and (max-width: 480px) {
-    .posts, .post-container {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
 }
 
 #mail-icon {
@@ -315,4 +287,59 @@ h3 {
         font-size: 18px;
     }
     
+}
+
+@media (min-width: 800px) {
+    .tabs{
+    h1 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    }
+    .tab {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tabs{
+        height: 14vh;
+        padding:0 0; 
+        h1{
+            font-size: 1.5rem;
+        }
+    }
+    .tab {
+        font-size: 1rem;
+    }
+    
+    .post-categories li {
+        margin-top: 5px
+    }
+
+    .profile-container{
+        img{
+            padding: 0rem;
+        }
+
+        i{
+            font-size: 2.0em;
+        }
+    }
+
+    .cv-illustrated-container {
+        h2{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .posts, .post-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
