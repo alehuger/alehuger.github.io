@@ -1,0 +1,96 @@
+I"v<p>DeepMind’s algorithm AlphaGo amazed the whole world by beating 4-1 Go champion Lee Sedol in 2016. This complex algorithm learned to play Go by crunching thousands Go grandmasters plays. <code class="highlighter-rouge"> AlphaZero</code>, DeepMind’s latest breakthrough in the field is far more impressive. It easily outperformed AlphaGo by solely learning on its own. 
+<br /> <b> How was that made possible and what mathematical mechanisms lie underneath? </b></p>
+
+<h2> Game Environment </h2>
+<p>The first step in reinforcement learning is to define the environment our agent will be trainde on. This means defining what are the possible states, actions and associated rewards.</p>
+
+<h4> Game State </h4>
+
+<div class="row offset-3">
+<figure>
+  <img src="assets/docs/posts/images/game_state.png" alt="Not Showing" />
+  <figcaption> See   <a href="https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0">  Applied Data Science Medium Post </a> </figcaption>
+</figure>
+</div>
+
+<h4> Rewards </h4>
+<h4> Trying Mechanism </h4>
+
+<h2> Self Play </h2>
+<h4>Monte Carlo Tree Search </h4>
+<h4>Search probabilities </h4>
+<h4>Update states value </h4>
+
+<h2> Learning </h2>
+<h4>Training Network </h4>
+<h4>Evaluating network </h4>
+
+<p>—&gt; Check result for Tic-tac-Toe and Othello Game</p>
+
+<p>An agent is trained to play a two players board game with complete information such as Tic-Tac-Toe, Othello or Go. 
+Given the rules of the game, the algorithm behind the agent will have to train only through self-play without any human knowledge.
+This work is based on .</p>
+
+<h2>Intro </h2>
+
+<p>
+This algorithm comes in three parts: defining the rules of the Game, the Monte-Carlo Search Tree (MCTS) methods and a Neural Network that deduces the action to choose from a given state of the board. For the sake of simplicity, we will take the example of the Tic-Tac-Toe to illustrate the concept showed here. 
+</p>
+
+<div class="row offset-3">
+<figure>
+  <img src="assets/docs/posts/images/ttt-illustrated.png" alt="Not Showing" />
+  <figcaption> Three different states of the Tic-Tac-Toe </figcaption>
+</figure>
+</div>
+
+<h4> Neural Network Purpose </h4>
+
+<p>
+  The objective of our algorithm is to find the optimal move for any given state of the board. 
+  In order for any machine learning algorithm to discover what makes a good state and, consequently, a good action it requires data from numerous games.
+</p>
+
+<h4> Tree Search </h4>
+
+<h2> Game Setting </h2>
+
+<p>
+The first step of the project is to create the pipeline for a simple board game such as Tic-Tac-Toe. Then, we will adapt it to more complex games.
+</p>
+
+<h2> Tree Search Simulates Ground Truths From Scratch </h2>
+
+<p>Our tree search is composed of several phases :</p>
+
+<h4> Rollout  </h4>
+
+<p>
+We take for root a node <b> S </b> and perform a simulation : we choose the action <b> A </b> that maximizes a utility function <b> U(S, A) </b> defined by : 
+
+$$ U(S, A) = Q(S, A) + c_{puct} . P(S, A) . \displaystyle{\frac{\sqrt{\sum_b N(S, b)}}{1 + N(S, A)}} $$
+where
+<ul>
+    <li> <b>N(S, A) is the visit counter</b> : action A has been taken N(S, A) times from node S </li>
+    <li> <b>Q(S, A) is the expected reward </b> from playing action A at node S </li>
+    <li> <b> <em> P(S, A) </em> is the initial policy </b> given by the neural network </li>
+    <li> <b> c<sub>puct</sub> is a hyperparameter </b> tuning the degree of exploration. </li>
+</ul>
+
+<p>
+After playing action <b> A </b>, we update visit counter <b> N(S, A) </b> and we get to the new node <b> S’ </b>. s’ is either newly visited, in which case we simply add this node to the tree, and initialize N(s’, b) and Q(s’, b) to 0 for all actions b while calling the neural network for the policy P(s’, .). In the other case, it has already been visited and then we call the function rollout recursively on s’ until a new node or a terminal state is reached. In that case we back propagate to update all expected rewards Q(s, a)inthepath.
+The number of rollouts called at each node is a hyperparam- eter of our model. Once all rollouts have been performed and all values updated, we have produced examples e.g. samples which will be turned into policies π(s) by just taking the empirical mean of the visit counter N(s, .) and normalize it. During a real game against a player, the agent will choose as an action a∗ = argmaxa(π(s)).
+</p>
+
+
+<p>
+
+</p>
+
+<h2> Neural Networks Learning </h2>
+
+<p>
+
+</p>
+</p>
+:ET

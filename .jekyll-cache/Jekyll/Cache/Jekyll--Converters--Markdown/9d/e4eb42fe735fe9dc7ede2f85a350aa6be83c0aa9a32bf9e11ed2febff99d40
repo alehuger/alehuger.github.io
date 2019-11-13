@@ -1,0 +1,74 @@
+I"t<p>DeepMind’s algorithm AlphaGo amazed the whole world by beating 4-1 Go champion Lee Sedol in 2016. This complex algorithm learned to play Go by crunching thousands Go grandmasters plays. <code class="highlighter-rouge"> AlphaZero</code>, DeepMind’s latest breakthrough in the field is far more impressive. It easily outperformed AlphaGo by solely learning on its own. 
+<br /> <b> How was that made possible and what mathematical mechanisms lie underneath? </b></p>
+
+<h2> Game Environment </h2>
+<p>This algorithm comes in three parts: defining the environment of the Game, the Monte-Carlo Search Tree (MCTS) methods and a Neural Network that deduces the action to choose from a given state of the board.
+<br />
+The first step in reinforcement learning is to define the environment our agent will be trained on. This means defining what are the possible states, actions and associated rewards. Here we will consider any two players zero sum board game with complete information such as Tic-Tac-Toe, Othello or Go. Let us first define the game states and actions.</p>
+
+<h4> Game State and Actions </h4>
+<p>The game state is a given configuration of the board: it can be represented by a matrix where each cell is described by the color of the token placed.
+The list of possible actions is game-specific: for Go it will be all empty cells but there will be less possible actions in Othello.</p>
+
+<h4> Rewards </h4>
+<p>In order to learn, the agent must be given rewards. But these rewards can’t be known at each step. At first, the only information available is the reward at   game end: the player gets a reward of +1 for winning, 0 for draw and -1 for losing. Unfortunately, a game can end after hundreds of moves in extremely diverse configurations. An agent can’t compute all possible paths leading to a victory. The idea is to infer value associated to various positions by playing hundred of thousands of games. Therefore, our agent must search the environment through self-play.</p>
+
+<h2> Self Play </h2>
+<p>The agent performs self play by performing Monte Carlo Search according to a search probability U.</p>
+
+<h4>Monte Carlo Tree Search </h4>
+<p>The idea of Monte Carlo Search is to perform several rollouts to better estimate the value of the configuration visited.
+The agents stores the configuration it has visited in a Tree. This is why this is called Monte Carlo Tree Search or MCTS.</p>
+
+<div class="row offset-3">
+<figure>
+  <img src="assets/docs/posts/images/mcts.png" alt="Not Showing" style="width: 25em" />
+  <figcaption> Monte Carlo Tree Search on Tic-Tac-Toe.  Source: <a href="http://tim.hibal.org/blog/alpha-zero-how-and-why-it-works/"> Tim Wheeler Blog </a> </figcaption>
+</figure>
+</div>
+
+<p>This does not tell us how each action is chosen according to the search probability U.</p>
+
+<h4>Search probabilities </h4>
+
+<p>The search probabilities rely upon a neural network that infer a position value from previously obtained data. The new data obtained during the search will be fed into a new network to obtain a more accurate estimation of position value. Therefore this algorithm goes back-and-forth between creating data from a previous network and training a new network on these new data. The deep network part is developed in the Learning section.</p>
+<p>
+Let us consider a state <b> S </b> and perform a simulation : we choose the action <b> A </b> that maximizes a utility function <b> U(S, A) </b> defined by : 
+
+$$ U(S, A) = Q(S, A) + c_{puct} . P(S, A) . \displaystyle{\frac{\sqrt{\sum_b N(S, b)}}{1 + N(S, A)}} $$
+where
+<ul>
+    <li> <b>N(S, A) is the visit counter</b> : action A has been taken N(S, A) times from node S </li>
+    <li> <b>Q(S, A) is the expected reward </b> from playing action A at node S </li>
+    <li> <b> <em> P(S, A) </em> is the initial policy </b> given by the neural network </li>
+    <li> <b> c<sub>puct</sub> is a hyperparameter </b> tuning the degree of exploration. </li>
+</ul>
+
+<p>
+After playing action <b> A </b>, we update visit counter <b> N(S, A) </b> and we get to the new node <b> S’ </b>. 
+<br />
+<b>S’ </b> is either newly visited, in which case we simply add this node to the tree, and initialize N(s’, b) and Q(s’, b) to 0 for all actions b while calling the neural network for the policy P(s’, .). 
+<br />
+In the other case, it has already been visited and then we call the function rollout recursively on s’ until a new node or a terminal state is reached. 
+In that case we back propagate to update all expected rewards Q(s, a)in the path.
+</p>
+
+<h4>Update policy</h4>
+<p>
+Once all rollouts have been performed and all values updated, we have produced examples. Theses will be turned into values V(s) by taking the empirical mean of the visit counter N(s, .) and normalizing it. 
+During a real game against a player, the agent will choose as an action a<sup>*</sup> = argmax<sub>a</sub>(V(s)).
+ </p>
+
+<h2> Learning </h2>
+  The objective of our algorithm is to find the optimal move for any given state of the board. It would be impossible to store all all configurations of the board and perform tabular Q-learning. Therefore we need an algorithm that can deduce from one given input its value. The network implemented for Alpha Zero is a Convolutionnal Neural Net that takes a 2D grid as input and outputs a value for this state. In order for any machine learning algorithm to discover what makes a good state and, consequently, a good action it requires lots of data, i.e game configurations labelled with its associated value.
+
+<h4>Training Data </h4>
+As we said, we don't have ground truth value for any configuration of the board except when the game as ended. The only information available is estimate of the configuration values <b> V(.) </b> computed during the rollouts. Therefore the network learns from data obtained by a previous iteration of the same network. It estimate a position based on data acquired from its previous estimates. Therefore we say that the network is bootstraping to learn the values of the board game.
+
+<h4>Evaluating network </h4>
+Once the new network has been trained on the new data, we can compare its performance against the previous network by making them play together.
+The new network has to win 55% of the showdown to be considered as the new best network.  It will then be used for the next step of the learning iteration.
+<br />
+We will coninue this process until we have reached a convergence where the new network never show progress conpare to the previous one.
+</p>
+:ET

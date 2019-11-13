@@ -58,7 +58,7 @@ body { font-family: 'Titillium Web', sans-serif; }
 
 .post { font-family: 'Merriweather', sans-serif; font-weight: 300; color: #222; line-height: 1.9em; }
 
-.post p { text-align: left; }
+.post p { text-align: justify; }
 
 .post a { color: #0A59B0; text-decoration: none; transition: border-bottom 0.4s; }
 
@@ -94,13 +94,13 @@ body { font-family: 'Titillium Web', sans-serif; }
 
 .post-header a { text-decoration: underline; }
 
-.content h2 { padding-top: 2em; padding-bottom: 0.5em; }
+.content h2 { padding-top: 1em; padding-bottom: 0.5em; }
 
 .content h4 { padding-top: 1em; padding-left: 1em; color: #0A59B0; }
 
 .content figcaption { display: flex; justify-content: center; }
 
-.content p { font-size: 18px; }
+.content p { font-size: 18px; text-align: justify; }
 
 @media (min-width: 800px) { .tabs h1 { font-size: 3rem; }
   .tabs h3 { font-size: 1rem; }

@@ -1,0 +1,109 @@
+I"�<p>DeepMind’s algorithm AlphaGo amazed the whole world by beating 4-1 Go champion Lee Sedol in 2016. This complex algorithm learned to play Go by crunching thousands Go grandmasters plays. <code class="highlighter-rouge"> AlphaZero</code>, DeepMind’s latest breakthrough in the field is far more impressive. It easily outperformed AlphaGo by solely learning on its own. 
+<br /> <b> How was that made possible and what mathematical mechanisms lie underneath? </b></p>
+
+<h2> Game Environment </h2>
+
+<p>The first step in reinforcement learning is to define the environment our agent will be trained on. This means defining what are the possible states, actions and associated rewards. Here we will consider any two players zero sum board game with complete information such as Tic-Tac-Toe, Othello or Go. Let us first define the game states and actions.</p>
+
+<h4> Game State and Actions </h4>
+<p>The game state is a given configuration of the board: it can be represented by a matrix where each cell is described by the color of the token placed.
+The list of possible actions is game-specific: for Go it will be all empty cells but there will be less possible actions in Othello.</p>
+
+<h4> Rewards </h4>
+<p>In order to learn, the agent must be given rewards. But these rewards can’t be known at each step. At first, the only information available is the reward at   game end: the player gets a reward of +1 for winning, 0 for draw and -1 for losing. Unfortunately, a game can end after hundreds of moves in extremely diverse configurations. An agent can’t compute all possible paths leading to a victory. The idea is to infer value associated to various positions by playing hundred of thousands of games. Therefore, our agent must search the environment through self-play.</p>
+
+<h2> Self Play </h2>
+<p>The agent performs self play by performing Monte Carlo Search according to a search probability U.</p>
+
+<h4>Monte Carlo Tree Search </h4>
+<p>The idea of Monte Carlo Search is to perform several rollouts to better estimate the value of the configuration visited.
+The agents stores the configuration it has visited in a Tree. This is why this is called Monte Carlo Tree Search or MCTS.</p>
+
+<div class="row offset-3">
+<figure>
+  <img src="assets/docs/posts/images/mcts.png" alt="Not Showing" style="width: 25em" />
+  <figcaption> Monte Carlo Tree Search on Tic-Tac-Toe.  Source: <a href="http://tim.hibal.org/blog/alpha-zero-how-and-why-it-works/"> Tim Wheeler Blog </a> </figcaption>
+</figure>
+</div>
+
+<p>This does not tell us how each action is chosen according to the search probability U.</p>
+
+<h4>Search probabilities </h4>
+<p>
+Let us consider a state <b> S </b> and perform a simulation : we choose the action <b> A </b> that maximizes a utility function <b> U(S, A) </b> defined by : 
+
+$$ U(S, A) = Q(S, A) + c_{puct} . P(S, A) . \displaystyle{\frac{\sqrt{\sum_b N(S, b)}}{1 + N(S, A)}} $$
+where
+<ul>
+    <li> <b>N(S, A) is the visit counter</b> : action A has been taken N(S, A) times from node S </li>
+    <li> <b>Q(S, A) is the expected reward </b> from playing action A at node S </li>
+    <li> <b> <em> P(S, A) </em> is the initial policy </b> given by the neural network </li>
+    <li> <b> c<sub>puct</sub> is a hyperparameter </b> tuning the degree of exploration. </li>
+</ul>
+
+<p>
+After playing action <b> A </b>, we update visit counter <b> N(S, A) </b> and we get to the new node <b> S’ </b>. s’ is either newly visited, in which case we simply add this node to the tree, and initialize N(s’, b) and Q(s’, b) to 0 for all actions b while calling the neural network for the policy P(s’, .). In the other case, it has already been visited and then we call the function rollout recursively on s’ until a new node or a terminal state is reached. 
+In that case we back propagate to update all expected rewards Q(s, a)in the path.
+The number of rollouts called at each node is a hyperparameter of our model.
+</p>
+
+<h4>Update policy</h4>
+Once all rollouts have been performed and all values updated, we have produced examples. Theses will be turned into policies π(s) by taking the empirical mean of the visit counter N(s, .) and normalizing it. 
+During a real game against a player, the agent will choose as an action a<sup>*</sup> = argmax<sub>a</sub>(π(s)).
+ 
+<h2> Learning </h2>
+<h4>Training Network </h4>
+<h4>Evaluating network </h4>
+
+—&gt; Check result for Tic-tac-Toe and Othello Game
+
+
+An agent is trained to play a two players board game with complete information such as Tic-Tac-Toe, Othello or Go. 
+Given the rules of the game, the algorithm behind the agent will have to train only through self-play without any human knowledge.
+This work is based on . 
+
+<h2>Intro </h2>
+
+<p>
+This algorithm comes in three parts: defining the rules of the Game, the Monte-Carlo Search Tree (MCTS) methods and a Neural Network that deduces the action to choose from a given state of the board. For the sake of simplicity, we will take the example of the Tic-Tac-Toe to illustrate the concept showed here. 
+</p>
+
+
+
+<h4> Neural Network Purpose </h4>
+
+<p>
+  The objective of our algorithm is to find the optimal move for any given state of the board. 
+  In order for any machine learning algorithm to discover what makes a good state and, consequently, a good action it requires data from numerous games.
+</p>
+
+<h4> Tree Search </h4>
+
+
+
+<h2> Tree Search Simulates Ground Truths From Scratch </h2>
+
+Our tree search is composed of several phases : 
+
+<h4> Rollout  </h4> 
+
+
+
+
+<p>
+
+</p>
+
+<h2> Neural Networks Learning </h2>
+
+<p>
+
+</p>
+<div class="row offset-3">
+<figure>
+  <img src="assets/docs/posts/images/game_state.png" alt="Not Showing" />
+  <figcaption> See   <a href="https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0"> . Applied Data Science Medium Post </a> </figcaption>
+</figure>
+</div>
+</p>
+:ET

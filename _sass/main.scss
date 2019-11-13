@@ -170,7 +170,7 @@ letter-spacing: 0.1rem;
 }
 
 .post p {
-    text-align: left
+    text-align: justify
 }
 
 .post a {
@@ -269,7 +269,7 @@ letter-spacing: 0.1rem;
 
 .content {
     h2{
-        padding-top: 2em;
+        padding-top: 1em;
         padding-bottom: 0.5em;
     }
 
@@ -285,6 +285,7 @@ letter-spacing: 0.1rem;
 
     p{
         font-size: 18px;
+        text-align: justify;
     }
     
 }
