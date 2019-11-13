@@ -7,3 +7,18 @@ info:
     email: auguste.lehuger@polytechnique.edu
     github:  alehuger
     linkedIn: in/alehuger # format: locale/username
+
+title:
+  Auguste Lehuger Blog
+
+description: 
+  A blog dedicated to present the last projects I work on.
+
+url:
+  alehuger.github.io
+
+author:
+  Auguste Lehuger
+
+plugins:
+  - jekyll-seo-tag

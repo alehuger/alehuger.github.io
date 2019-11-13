@@ -1,4 +1,0 @@
-I"�<p>An agent is trained to play a two players board game with complete information such as Tic-Tac-Toe, Othello or Go. 
-Given the rules of the game, the algorithm behind the agent will have to train only through self-play without any human knowledge.
-This work is based on <code class="highlighter-rouge"> AlphaZero’s algorithm</code>, DeepMind’s latest breakthrough in the field.</p>
-:ET
