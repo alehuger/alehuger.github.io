@@ -39,4 +39,12 @@ layout: default
         {% endif %}
     </div>
 
+    <div class="row post-header">
+        {%if page.git_url %}
+        <p>
+                <a href="{{page.git_url}}"> For more information, check the github repository available here</a>
+        </p>
+        {% endif %}
+    </div>
+
 </div>

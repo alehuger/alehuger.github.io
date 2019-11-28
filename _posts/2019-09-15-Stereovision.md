@@ -3,11 +3,12 @@ title: 3D Skeleton Reconstruction from Biplanar Radiographs
 layout: post
 date: 2019-09-15
 tags: 
+- Computer Vision
 - Convolutionnal Neural Nets 
 - Stereovision 
 - 3D Mesh Modeling
 image_url: assets/docs/posts/images/eos2.png
-permalink: Stereovision
+permalink: stereovision-in-radio
 ---
 
 Orthopedic Surgery experts now ask for 3D modelling of the body for their Surgery Planning. Being able to vizualise the body in all three dimensions is critical to assess vertebra rotation for example. Today radiographic imaging systems provide 2D information of vertebrae in different views. 
