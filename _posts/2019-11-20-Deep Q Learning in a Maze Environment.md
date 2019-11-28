@@ -15,5 +15,8 @@ Reinforcement learning techniques shows great potential for <a href="https://ale
 Therefore, reinforcement learning agents require to be piloted by a learning decision function thus falling back on <code class="highlighter-rouge"> deep learning </code>.
 <br> <b> How reinforcement learning and deep learning team up to give birth to an efficient real-world application agent ? </b>
 
+<p style="padding-top: 2em;"  > 
+</p>
+
 <h1> WORK IN PROGRESS </h1>
 
