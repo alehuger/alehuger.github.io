@@ -304,35 +304,37 @@ letter-spacing: 0.1rem;
     }
 }
 
-@media screen and (max-width: 640px) {
-    .tabs{
-        height: 12vh;
-        padding:0 0; 
-        h1{
-            font-size: 1.5rem;
+@media (max-width: 780px) {
+    .body{
+        .tabs{
+            height: 12vh;
+            padding:0 0; 
+            h1{
+                font-size: 1.5rem;
+            }
         }
-    }
-    .tab {
-        font-size: 1rem;
-    }
-    
-    .post-categories li {
-        margin-top: 5px
-    }
-
-    .profile-container{
-        img{
-            padding: 0rem;
-        }
-
-        i{
-            font-size: 2.0em;
-        }
-    }
-
-    .cv-illustrated-container {
-        h2{
+        .tab {
             font-size: 1rem;
+        }
+        
+        .post-categories li {
+            margin-top: 5px
+        }
+
+        .profile-container{
+            img{
+                padding: 0rem;
+            }
+
+            i{
+                font-size: 2.0em;
+            }
+        }
+
+        .cv-illustrated-container {
+            h2{
+                font-size: 1rem;
+            }
         }
     }
 }
