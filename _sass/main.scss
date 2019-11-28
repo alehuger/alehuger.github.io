@@ -304,9 +304,9 @@ letter-spacing: 0.1rem;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
     .tabs{
-        height: 14vh;
+        height: 12vh;
         padding:0 0; 
         h1{
             font-size: 1.5rem;
