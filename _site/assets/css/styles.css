@@ -1,6 +1,6 @@
-body { font-family: 'Titillium Web', sans-serif; }
+.webpage { font-family: 'Titillium Web', sans-serif; }
 
-.tabs { font-family: 'Titillium Web', sans-serif; display: flex; flex-direction: column; align-items: center; height: 18vh; justify-content: flex-start; position: relative; background: #eee; text-align: center; padding: 0 2rem; }
+.tabs { display: flex; flex-direction: column; align-items: center; height: 18vh; justify-content: flex-start; position: relative; background: #eee; text-align: center; padding: 0 2rem; }
 
 .tabs h1 { color: whitesmoke; font-size: 1.8rem; margin: 0; letter-spacing: 1rem; }
 
@@ -14,7 +14,7 @@ body { font-family: 'Titillium Web', sans-serif; }
 
 .tab:hover { color: white; background: #2D78AD; transition: all 0.5s ease; }
 
-.profile-container { font-family: 'Titillium Web', sans-serif; display: flex; flex-direction: column; align-items: center; height: 80vh; position: relative; background: white; text-align: center; padding: 15% 2em; }
+.profile-container { display: flex; flex-direction: column; align-items: center; height: 80vh; position: relative; background: white; text-align: center; padding: 15% 2em; }
 
 .profile-container h1 { color: whitesmoke; font-size: 2rem; margin: 0; letter-spacing: 1rem; }
 
@@ -34,7 +34,7 @@ body { font-family: 'Titillium Web', sans-serif; }
 
 .profile-container .col { padding-right: 0px; }
 
-.content-container { font-family: 'Titillium Web', sans-serif; margin-top: 6em; margin-right: 10em; }
+.content-container { margin-top: 6em; margin-right: 10em; }
 
 .content-container i { font-size: 9em; margin-top: 0.5em; }
 
@@ -102,18 +102,11 @@ body { font-family: 'Titillium Web', sans-serif; }
 
 .content p { font-size: 18px; text-align: justify; }
 
-@media (min-width: 800px) { .tabs h1 { font-size: 3rem; }
-  .tabs h3 { font-size: 1rem; }
-  .tab { font-size: 1rem; } }
+/*  ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) { .webpage { font-family: Arial, Helvetica, sans-serif; }
+  .tabs { height: 12vh; } }
 
-@media screen and (max-width: 768px) { .tabs { height: 14vh; padding: 0 0; }
-  .tabs h1 { font-size: 1.5rem; }
-  .tab { font-size: 1rem; }
-  .post-categories li { margin-top: 5px; }
-  .profile-container img { padding: 0rem; }
-  .profile-container i { font-size: 2.0em; }
-  .cv-illustrated-container h2 { font-size: 1rem; } }
-
-@media screen and (max-width: 480px) { .posts, .post-container { margin-left: 20px; margin-right: 20px; } }
+/* @media (min-width: 800px) { .tabs{ h1 { font-size: 3rem; } h3 { font-size: 1rem; } } .tab { font-size: 1rem; } } @media (max-width: 1300px) { .body{ .tabs{ height: 12vh; padding:0 0;  h1{ font-size: 1.5rem; } } .tab { font-size: 1rem; } .post-categories li { margin-top: 5px } .profile-container{ img{ padding: 0rem; } i{ font-size: 2.0em; } } .cv-illustrated-container { h2{ font-size: 1rem; } } } } @media screen and (max-width: 480px) { .posts, .post-container { margin-left: 20px; margin-right: 20px; } } */
 
 /*# sourceMappingURL=styles.css.map */

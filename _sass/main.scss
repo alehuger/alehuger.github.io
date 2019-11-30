@@ -1,10 +1,9 @@
-body {
+.webpage {
     font-family: 'Titillium Web', sans-serif;
 }
 
 
-.tabs{
-    font-family: 'Titillium Web', sans-serif;
+.tabs{    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,6 +27,7 @@ body {
 }
 
 .tabs-container {
+    
 display: flex;
 flex-direction: row;
 position: absolute;
@@ -56,11 +56,10 @@ letter-spacing: 0.1rem;
         color:white;
   background: #2D78AD;
         transition: all 0.5s ease;
-}
+    }
 }
 
 .profile-container {
-    font-family: 'Titillium Web', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +108,6 @@ letter-spacing: 0.1rem;
 }
 
 .content-container {
-    font-family: 'Titillium Web', sans-serif;
     margin-top: 6em;
     margin-right: 10em;
     
@@ -289,8 +287,32 @@ letter-spacing: 0.1rem;
     }
     
 }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .webpage{
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tabs{
+        height: 12vh;
+    }
+    
+  }
 
-@media (min-width: 800px) {
+
+/* @media (min-width: 800px) {
     .tabs{
     h1 {
         font-size: 3rem;
@@ -304,8 +326,12 @@ letter-spacing: 0.1rem;
     }
 }
 
-@media (max-width: 780px) {
+
+
+@media (max-width: 1300px) {
     .body{
+        
+
         .tabs{
             height: 12vh;
             padding:0 0; 
@@ -345,4 +371,4 @@ letter-spacing: 0.1rem;
         margin-left: 20px;
         margin-right: 20px;
     }
-}
+} */

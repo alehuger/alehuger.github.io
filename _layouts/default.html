@@ -12,14 +12,19 @@
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
   <link rel="stylesheet" href="/assets/css/fontello.css">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+  <link rel="" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% seo %}
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+  <link rel="shortcut icon" type="image/png" href="/assets/docs/favicon/apple-touch-icon-57x57.png">
+  <link rel="shortcut icon" sizes="76x76" href="/assets/docs/favicon/apple-touch-icon-ipad-76x76.png">
+  <link rel="shortcut icon" sizes="120x120" href="/assets/docs/favicon/apple-touch-icon-iphone-retina-120x120.png">
+  <link rel="shortcut icon" sizes="152x152" href="/assets/docs/favicon/apple-touch-icon-ipad-retina-152x152.png">
 </head>
 
-<body>
+<body class='webpage'>
   {% include navigation.html %}
 
   <div class="row">

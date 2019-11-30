@@ -9,10 +9,10 @@ info:
     linkedIn: in/alehuger # format: locale/username
 
 title:
-  Auguste Lehuger Blog
+  Auguste Lehuger
 
 description: 
-  A blog dedicated to present the last projects I work on.
+  Personnal Blog
 
 url:
   alehuger.github.io
@@ -22,3 +22,6 @@ author:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+include: ['.htaccess']
