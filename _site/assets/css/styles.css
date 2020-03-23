@@ -104,8 +104,8 @@
 
 /*  ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
-@media (min-width: 320px) and (max-width: 480px) { .webpage { font-family: Arial, Helvetica, sans-serif; }
-  .tabs { height: 12vh; } }
+@media only screen and (min-width: 320px) and (max-width: 1000px) { .webpage { font-family: Arial, Helvetica, sans-serif; }
+  .tabs { height: 9vh; } }
 
 /* @media (min-width: 800px) { .tabs{ h1 { font-size: 3rem; } h3 { font-size: 1rem; } } .tab { font-size: 1rem; } } @media (max-width: 1300px) { .body{ .tabs{ height: 12vh; padding:0 0;  h1{ font-size: 1.5rem; } } .tab { font-size: 1rem; } .post-categories li { margin-top: 5px } .profile-container{ img{ padding: 0rem; } i{ font-size: 2.0em; } } .cv-illustrated-container { h2{ font-size: 1rem; } } } } @media screen and (max-width: 480px) { .posts, .post-container { margin-left: 20px; margin-right: 20px; } } */
 
