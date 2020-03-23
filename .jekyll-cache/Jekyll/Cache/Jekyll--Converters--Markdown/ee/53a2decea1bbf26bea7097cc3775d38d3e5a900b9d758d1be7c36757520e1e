@@ -1,53 +1,38 @@
----
-title: Artificial Intelligence in Complete Information Board Games
-description: How to build a self learning agent in Complete Information Board Games ?
-layout: post
-date: 2018-03-20
-tags: 
-- Reinforcement Learning
-- Monte Carlo Search 
-- Game Theory 
-- AlphaZero
-image_url: assets/docs/posts/images/ai2.png
-pdf_url: assets/docs/posts/pdfs/OthelloAI.pdf
-permalink: projects/board-game-ai
----
+I"�<p>DeepMind’s algorithm AlphaGo amazed the whole world by beating 4-1 Go champion Lee Sedol in 2016. This complex algorithm learned to play Go by crunching thousands Go grandmasters plays. <code class="highlighter-rouge"> AlphaZero</code>, DeepMind’s latest breakthrough in the field is far more impressive. It easily outperformed AlphaGo by solely learning on its own. 
+<br /> <b> How was that made possible and what mathematical mechanisms lie underneath? </b></p>
 
-DeepMind's algorithm AlphaGo amazed the whole world by beating 4-1 Go champion Lee Sedol in 2016. This complex algorithm learned to play Go by crunching thousands Go grandmasters plays. <code class="highlighter-rouge"> AlphaZero</code>, DeepMind’s latest breakthrough in the field is far more impressive. It easily outperformed AlphaGo by solely learning on its own. 
-<br> <b> How was that made possible and what mathematical mechanisms lie underneath? </b>
-
-<p style="padding-top: 2em;"  > <em>This algorithm comes in three parts: defining the <b>Game Environment</b>, the <b>Monte-Carlo Search Tree </b> (MCTS) methods and a <b> Neural Network </b> that deduces the action to choose from a given state of the board. </em> </p>
+<p style="padding-top: 2em;"> <em>This algorithm comes in three parts: defining the <b>Game Environment</b>, the <b>Monte-Carlo Search Tree </b> (MCTS) methods and a <b> Neural Network </b> that deduces the action to choose from a given state of the board. </em> </p>
 
 <h2> Game Environment </h2>
-The first step in reinforcement learning is to define the environment our agent will be trained on. This means defining what are the possible states, actions and associated rewards. Here we will consider any two players zero sum board game with complete information such as Tic-Tac-Toe, Othello or Go. Let us first define the game states and actions. 
+<p>The first step in reinforcement learning is to define the environment our agent will be trained on. This means defining what are the possible states, actions and associated rewards. Here we will consider any two players zero sum board game with complete information such as Tic-Tac-Toe, Othello or Go. Let us first define the game states and actions.</p>
 
 <h4> Game State and Actions </h4>
-The game state is a given configuration of the board: it can be represented by a matrix where each cell is described by the color of the token placed.
-The list of possible actions is game-specific: for Go it will be all empty cells but there will be less possible actions in Othello.
+<p>The game state is a given configuration of the board: it can be represented by a matrix where each cell is described by the color of the token placed.
+The list of possible actions is game-specific: for Go it will be all empty cells but there will be less possible actions in Othello.</p>
 
 <h4> Rewards </h4>
-In order to learn, the agent must be given rewards. But these rewards can't be known at each step. At first, the only information available is the reward at   game end: the player gets a reward of +1 for winning, 0 for draw and -1 for losing. Unfortunately, a game can end after hundreds of moves in extremely diverse configurations. An agent can't compute all possible paths leading to a victory. The idea is to infer value associated to various positions by playing hundred of thousands of games. Therefore, our agent must search the environment through self-play.
+<p>In order to learn, the agent must be given rewards. But these rewards can’t be known at each step. At first, the only information available is the reward at   game end: the player gets a reward of +1 for winning, 0 for draw and -1 for losing. Unfortunately, a game can end after hundreds of moves in extremely diverse configurations. An agent can’t compute all possible paths leading to a victory. The idea is to infer value associated to various positions by playing hundred of thousands of games. Therefore, our agent must search the environment through self-play.</p>
 
 <h2> Self Play </h2>
-The agent performs self play by performing Monte Carlo Search according to a search probability U. 
+<p>The agent performs self play by performing Monte Carlo Search according to a search probability U.</p>
 
 <h4>Monte Carlo Tree Search </h4>
-The idea of Monte Carlo Search is to perform several rollouts to better estimate the value of the configuration visited.
-The agents stores the configuration it has visited in a Tree.
+<p>The idea of Monte Carlo Search is to perform several rollouts to better estimate the value of the configuration visited.
+The agents stores the configuration it has visited in a Tree.</p>
 
 <div class="row offset-3">
 <figure>
-  <img src="/assets/docs/posts/images/mcts.png" alt="Tree Search" style="width: 25em">
+  <img src="/assets/docs/posts/images/mcts.png" alt="Tree Search" style="width: 25em" />
   <figcaption> Monte Carlo Tree Search on Tic-Tac-Toe. <em>  Source: <a href="http://tim.hibal.org/blog/alpha-zero-how-and-why-it-works/"> Tim Wheeler Blog </a> </em></figcaption>
 </figure>
 </div>
 
-The Tree Search is performed according to a specific rule: <b> the Search Probability U. </b>
+<p>The Tree Search is performed according to a specific rule: <b> the Search Probability U. </b></p>
 
 <h4>Search probabilities </h4>
 
-The search probabilities rely upon a neural network that infer a position value from previously obtained data. The new data obtained during the search will be fed into a new network to obtain a more accurate estimation of position value. Therefore this algorithm goes back-and-forth between creating data from a previous network and training a new network on these new data. 
-<br> <em> The deep network part is developed in the Learning section.</em>
+<p>The search probabilities rely upon a neural network that infer a position value from previously obtained data. The new data obtained during the search will be fed into a new network to obtain a more accurate estimation of position value. Therefore this algorithm goes back-and-forth between creating data from a previous network and training a new network on these new data. 
+<br /> <em> The deep network part is developed in the Learning section.</em></p>
 <p>
 Let us consider a state <b> S </b> and perform a simulation : we choose the action <b> A </b> that maximizes a utility function <b> U(S, A) </b> defined by : 
 
@@ -62,9 +47,9 @@ where
 
 <p>
 After playing action <b> A </b>, we update visit counter <b> N(S, A) </b> and we get to the new node <b> S’ </b>. 
-<br>
+<br />
 <b>S’ </b> is either newly visited, in which case we simply add this node to the tree, and initialize N(s’, b) and Q(s’, b) to 0 for all actions b while calling the neural network for the policy P(s’, .). 
-<br>
+<br />
 In the other case, it has already been visited and then we call the function rollout recursively on s’ until a new node or a terminal state is reached. 
 In that case we back propagate to update all expected rewards Q(s, a)  in the path.
 </p>
@@ -89,6 +74,8 @@ As we said, we don't have ground truth value for any configuration of the board 
 <p>
 Once the new network has been trained on the new data, we can compare its performance against the previous network by making them play together.
 The new network has to win 55% of the showdowns to be considered as the new best network.  It will then be used for the next step of the learning iteration.
-<br>
+<br />
 We will coninue this process until we have reached a convergence where the new network never show progress conpare to the previous one.
 </p>
+</p>
+:ET
