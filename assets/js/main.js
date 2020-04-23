@@ -1,4 +1,13 @@
-const raw_list = 'Astérix le gaulois, Bill Gates, Lancelot, Nanouk l’esquimau, Superman, Barack Obama, Tintin, Rayman, Einstein, Alice au pays des merveilles, Jack Sparrow, Louis Vuitton, Alphonse Daudet, Casimir, Napoléon, Bugs Bunny, Johnny Halliday, Lucky Luke, Charlie Chaplin, La Joconde, Dark Vador, Le génie de la lampe, Haroun Tazieff, Schreck, La reine d’Angleterre, Claude François, Gaston Lagaffe, Cindy Sanders, Zavatta, Lionel Messi, Agatha Christie, Hubert Reeves, Picasso, Steve Job, Louis de Funès, Mickey, Chantal Goya, Cousteau, Galilée, Un shadock, Chef indien, Harry Potter, Cyril Lignac, Archimède, L’Abbé Pierre, Louis XIV, Céline Dion, Les frères Grimm, Cléopâtre, Mr Bean, Yannick Noah, Isaac Newton, Le Dalaï lama, Bisounours, Homer Simpson, Jean-Pierre Pernaut, Jules Verne, Gad Elmaleh, Dorothée, Mac Gyver, Mimi Mathy, Zinedine Zidane, Michael Jackson, Mime Marceau, Marilyn Monroe';
+// const raw_list = 'Astérix le gaulois, Bill Gates, Lancelot, Nanouk l’esquimau, Superman, Barack Obama, Tintin, Rayman, Einstein, Alice au pays des merveilles, Jack Sparrow, Louis Vuitton, Alphonse Daudet, Casimir, Napoléon, Bugs Bunny, Johnny Halliday, Lucky Luke, Charlie Chaplin, La Joconde, Dark Vador, Le génie de la lampe, Haroun Tazieff, Schreck, La reine d’Angleterre, Claude François, Gaston Lagaffe, Cindy Sanders, Zavatta, Lionel Messi, Agatha Christie, Hubert Reeves, Picasso, Steve Job, Louis de Funès, Mickey, Chantal Goya, Cousteau, Galilée, Un shadock, Chef indien, Harry Potter, Cyril Lignac, Archimède, L’Abbé Pierre, Louis XIV, Céline Dion, Les frères Grimm, Cléopâtre, Mr Bean, Yannick Noah, Isaac Newton, Le Dalaï lama, Bisounours, Homer Simpson, Jean-Pierre Pernaut, Jules Verne, Gad Elmaleh, Dorothée, Mac Gyver, Mimi Mathy, Zinedine Zidane, Michael Jackson, Mime Marceau, Marilyn Monroe';
+
+
+a_list = ['Astérix le gaulois', 'Bill qsGates', 'Supermans', 'Barack Obama', 'Rayqsman']
+r_list = ["ray misterio", "titeuf", "Hugo boss", 'Patrick Sébastien', 'Charles de Gaulle', "Neville londubat", "Pikachu", "Louis de Funes", "Aragorn", "Amonbofis"]
+t_list = ["Ferrari", "Jacques Chirac", "Jul", "Vitaa", "Un Sous-Marin", "Elvis", "un Ewok", "Barack Obama", "Marilyn Monroe", "Bugs Bunny"]
+g_list = ["Mohamed Henni", "Mohamed Ali", "le prophète Mohammed", "Mohammed Merah", "Mohamed Salah", "Momo (le frère de zoer)", "Goebels", "Francky Vincent"]
+m_list = ['Donald Trump', 'César', 'Peter Pan', 'Ulysse', 'Mozart', 'Le Corbusier', 'Miles Davis', 'Newton']
+
+raw_list = a_list.concat(r_list).concat(t_list).concat(g_list).concat(m_list)
 
 const TIME_SECONDS = 40;
 
@@ -48,7 +57,10 @@ console.log(REMAINING_WORDS)
 console.log(NEW_GUESSED_WORDS)
 
 function load(){
-	WORDLIST = raw_list.split(', ');
+	// WORDLIST = raw_list.split(', ');
+	WORDLIST = raw_list;
+	console.log('WORD', WORDLIST[0])
+	console.log(g_list)
 	REMAINING_WORDS = WORDLIST;	
 	text = '<ul>'
 	for (i = 0; i < WORDLIST.length; i++) {
