@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Time's Up !</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+  <link rel="stylesheet" href="/assets/css/fontello.css">
+  <link rel="" type="image/png" href="/assets/docs/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Time’s Up ! | Auguste Lehuger</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Time’s Up !" />
+<meta name="author" content="Auguste Lehuger" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personnal Blog" />
+<meta property="og:description" content="Personnal Blog" />
+<link rel="canonical" href="http://localhost:4000/timesup.html" />
+<meta property="og:url" content="http://localhost:4000/timesup.html" />
+<meta property="og:site_name" content="Auguste Lehuger" />
+<script type="application/ld+json">
+{"description":"Personnal Blog","@type":"WebPage","url":"http://localhost:4000/timesup.html","author":{"@type":"Person","name":"Auguste Lehuger"},"headline":"Time’s Up !","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="canonical" href="http://localhost:4000/timesup.html">
+  <link rel="shortcut icon" type="image/png" href="/assets/docs/favicon/apple-touch-icon-57x57.png">
+  <link rel="shortcut icon" sizes="76x76" href="/assets/docs/favicon/apple-touch-icon-ipad-76x76.png">
+  <link rel="shortcut icon" sizes="120x120" href="/assets/docs/favicon/apple-touch-icon-iphone-retina-120x120.png">
+  <link rel="shortcut icon" sizes="152x152" href="/assets/docs/favicon/apple-touch-icon-ipad-retina-152x152.png">
+</head>
+
+<body class='webpage' onload="load()">  
+  
+  <div id='timesup'">
+    <div class="row d-flex justify-content-center">
+        <h1>Time is Up Friendos!</h1>    
+    </div>
+
+    <div id="countdown" class="row d-flex justify-content-center">
+        <button type="button" class="btn btn-success" onclick="start()"> <h4>Start</h4></button>
+    </div>
+
+    <div class="row" id='game-setup'>
+
+        <div class="col-md-3" id='tohide'>
+            <div class="jumbotron">
+                <h5> All Words: </h5>
+                <p id="display_wordlist"></p>
+            </div>
+        </div>
+        <div class="col-md-3 offset-3">
+            <div class="jumbotron">
+                <h5> All Guessed Words: </h5>
+                <p id="display_guessed_words"> No Guesses at the moment!</p>
+                
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="jumbotron">
+                <h5> Input new guessed words: </h5>
+                <input type='text' placeholder="ctrl-v ici, c'est carré!" id='input_guessed_words' />
+                <button onclick="add_guessed_words()">Add</button>
+            </div>
+        </div>
+
+    </div>    
+    
+    <div class="row" id='game-run'>
+        
+        <div class="col-md-4 offset-2">
+            <div class="jumbotron">
+                <h5> Make them guess the word: </h5>
+                <p id="word_to_guess"></p>
+                <button type="button" class="btn btn-info" onclick="display_next_word_to_guess()"> Next Word </button>                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <h5> Words you made guessed: </h5>
+                <p id="new_guessed_words"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="report" class="row d-flex justify-content-center">
+        <div id='report-number'></div>
+    </div>
+</div>
+
+  
+
+</body>
+
+</html>

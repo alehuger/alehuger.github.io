@@ -19,5 +19,3 @@ Therefore, reinforcement learning agents require to be piloted by a learning dec
 <p style="padding-top: 2em;"  > 
 </p>
 
-<h3> WORK IN PROGRESS </h3>
-

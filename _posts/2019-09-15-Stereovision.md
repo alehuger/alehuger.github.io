@@ -15,7 +15,5 @@ permalink: projects/stereovision-in-radio
 Orthopedic Surgery experts now ask for 3D modelling of the body for their Surgery Planning. Being able to vizualise the body in all three dimensions is critical to assess vertebra rotation for example. Today radiographic imaging systems provide 2D information of vertebrae in different views. 
 <b> The challenge is to infer the most accurate 3D shape of vertebrae from these views. </b>
 
-<h3> WORK IN PROGRESS </h3>
-
 <p>
 </p>

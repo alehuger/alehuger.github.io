@@ -104,9 +104,31 @@
 
 /*  ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
-@media only screen and (min-width: 320px) and (max-width: 1000px) { .webpage { font-family: Arial, Helvetica, sans-serif; }
-  .tabs { height: 9vh; } }
+@media only screen and (min-width: 320px) and (max-width: 1000px) { .tabs { height: 9vh; } }
 
 /* @media (min-width: 800px) { .tabs{ h1 { font-size: 3rem; } h3 { font-size: 1rem; } } .tab { font-size: 1rem; } } @media (max-width: 1300px) { .body{ .tabs{ height: 12vh; padding:0 0;  h1{ font-size: 1.5rem; } } .tab { font-size: 1rem; } .post-categories li { margin-top: 5px } .profile-container{ img{ padding: 0rem; } i{ font-size: 2.0em; } } .cv-illustrated-container { h2{ font-size: 1rem; } } } } @media screen and (max-width: 480px) { .posts, .post-container { margin-left: 20px; margin-right: 20px; } } */
+#timesup h1 { display: inline; margin: 1em; border-radius: 25px; padding: 1em; background-color: lightgray; }
+
+#timesup h5 { text-decoration: underline; }
+
+#timesup .jumbotron { margin: 1em; margin-top: 2em; border: 2em; left: 50%; padding: 0.5rem 1rem; padding-bottom: 3em; text-align: center; }
+
+#timesup p { padding: 1em; }
+
+#timesup ul { list-style-type: none; }
+
+#timesup li { padding: 0.5em; text-decoration: none; }
+
+#game-run { display: none; }
+
+#report { display: none; }
+
+#tohide { display: none; }
+
+.countdown-timer { color: green; font-weight: 900; font-size: xx-large; background-color: whitesmoke; border-radius: 25px; }
+
+#display_guessed_words { padding-top: 1em; font-style: italic; }
+
+#word_to_guess { font-weight: bold; font-size: x-large; padding: 0.5em; color: #FFA500; }
 
 /*# sourceMappingURL=styles.css.map */

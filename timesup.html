@@ -1,0 +1,60 @@
+---
+layout: sides
+title: Time's Up !
+---
+
+<div id='timesup'">
+    <div class="row d-flex justify-content-center">
+        <h1>Time is Up Friendos!</h1>    
+    </div>
+
+    <div id="countdown" class="row d-flex justify-content-center">
+        <button type="button" class="btn btn-success" onclick="start()"> <h4>Start</h4></button>
+    </div>
+
+    <div class="row" id='game-setup'>
+
+        <div class="col-md-3" id='tohide'>
+            <div class="jumbotron">
+                <h5> All Words: </h5>
+                <p id="display_wordlist"></p>
+            </div>
+        </div>
+        <div class="col-md-3 offset-3">
+            <div class="jumbotron">
+                <h5> All Guessed Words: </h5>
+                <p id="display_guessed_words"> No Guesses at the moment!</p>
+                
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="jumbotron">
+                <h5> Input new guessed words: </h5>
+                <input type='text' placeholder="ctrl-v ici, c'est carré!" id='input_guessed_words' />
+                <button onclick="add_guessed_words()">Add</button>
+            </div>
+        </div>
+
+    </div>    
+    
+    <div class="row" id='game-run'>
+        
+        <div class="col-md-4 offset-2">
+            <div class="jumbotron">
+                <h5> Make them guess the word: </h5>
+                <p id="word_to_guess"></p>
+                <button type="button" class="btn btn-info" onclick="display_next_word_to_guess()"> Next Word </button>                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <h5> Words you made guessed: </h5>
+                <p id="new_guessed_words"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="report" class="row d-flex justify-content-center">
+        <div id='report-number'></div>
+    </div>
+</div>

@@ -304,9 +304,6 @@ letter-spacing: 0.1rem;
   
   
   @media only screen and (min-width: 320px) and (max-width: 1000px) {
-    .webpage{
-        font-family: Arial, Helvetica, sans-serif;
-    } 
     .tabs{
         height: 9vh;
     }
@@ -375,3 +372,75 @@ letter-spacing: 0.1rem;
         margin-right: 20px;
     }
 } */
+
+#timesup{
+    h1{
+        display: inline;
+        margin: 1em;
+        border-radius: 25px;
+        padding: 1em;
+        background-color: lightgray;        
+    }
+    h5{
+        text-decoration: underline;
+    }
+    .jumbotron{
+        margin:1em;
+        margin-top: 2em;
+        border: 2em;
+        left: 50%;  
+        padding: 0.5rem 1rem; 
+        padding-bottom: 3em;  
+        text-align: center;        
+    }
+
+    p{
+        padding: 1em;
+    }
+
+    ul {
+        list-style-type: none;
+       }
+
+    li{
+        padding: 0.5em;
+        text-decoration: none;
+    }
+    
+}
+
+#game-run{
+    display: none;
+}
+
+#report{
+    display: none;
+}
+
+#tohide{
+    display: none;
+}
+
+#countdown{    
+}
+
+.countdown-timer{
+    color: green;    
+    font-weight: 900;
+    font-size: xx-large;
+    background-color: whitesmoke;
+    border-radius: 25px;
+
+}
+
+#display_guessed_words{
+    padding-top: 1em ;
+    font-style: italic;
+}
+
+#word_to_guess{
+    font-weight: bold;
+    font-size: x-large;
+    padding: 0.5em;
+    color: #FFA500;
+}
