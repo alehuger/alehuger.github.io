@@ -117,6 +117,11 @@ var ALREADY_GUESSED_WORDS = [];
 var REMAINING_WORDS = WORDLIST;
 var NEW_GUESSED_WORDS = [];
 
+console.log(WORDLIST)
+console.log(ALREADY_GUESSED_WORDS)
+console.log(REMAINING_WORDS)
+console.log(NEW_GUESSED_WORDS)
+
 function load(){
 	WORDLIST = raw_list.split(', ');
 	REMAINING_WORDS = WORDLIST;	
@@ -125,8 +130,7 @@ function load(){
 		text += "<li>" + WORDLIST[i] + "</li>";
 	  }
 	text+= '</ul>'
-	document.getElementById("display_wordlist").innerHTML = text;	
-	
+	document.getElementById("display_wordlist").innerHTML = text;		
 }
 
 function refresh_init(){
@@ -162,6 +166,7 @@ function add_guessed_words(){
 	var input = document.getElementById("input_guessed_words").value;	
 	let already_guessed_words_var = input.split(', ');
 	for (i = 0; i < already_guessed_words_var.length; i++) {
+		console.log(ALREADY_GUESSED_WORDS)
 		ALREADY_GUESSED_WORDS.push(already_guessed_words_var[i]);
 	  }
 	refresh_init()
@@ -172,7 +177,8 @@ function display_next_word_to_guess(){
 	var element = document.getElementById("word_to_guess");	
 	content = element.textContent;
 
-	if (content != ''){		
+	if (content != ''){	
+		console.log(NEW_GUESSED_WORDS)	
 		NEW_GUESSED_WORDS.push(content)		
 		REMAINING_WORDS = REMAINING_WORDS.filter(e => e !== content);
 		text = '<ul>'

@@ -1,80 +1,80 @@
 const raw_list = 'Astérix le gaulois, Bill Gates, Lancelot, Nanouk l’esquimau, Superman, Barack Obama, Tintin, Rayman, Einstein, Alice au pays des merveilles, Jack Sparrow, Louis Vuitton, Alphonse Daudet, Casimir, Napoléon, Bugs Bunny, Johnny Halliday, Lucky Luke, Charlie Chaplin, La Joconde, Dark Vador, Le génie de la lampe, Haroun Tazieff, Schreck, La reine d’Angleterre, Claude François, Gaston Lagaffe, Cindy Sanders, Zavatta, Lionel Messi, Agatha Christie, Hubert Reeves, Picasso, Steve Job, Louis de Funès, Mickey, Chantal Goya, Cousteau, Galilée, Un shadock, Chef indien, Harry Potter, Cyril Lignac, Archimède, L’Abbé Pierre, Louis XIV, Céline Dion, Les frères Grimm, Cléopâtre, Mr Bean, Yannick Noah, Isaac Newton, Le Dalaï lama, Bisounours, Homer Simpson, Jean-Pierre Pernaut, Jules Verne, Gad Elmaleh, Dorothée, Mac Gyver, Mimi Mathy, Zinedine Zidane, Michael Jackson, Mime Marceau, Marilyn Monroe';
 
-// class StickyNavigation {
+class StickyNavigation {
 	
-// 	constructor() {
-// 		this.currentId = null;
-// 		this.currentTab = null;
-// 		this.tabContainerHeight = 70;
-// 		let self = this;
-// 		$('.et-hero-tab').click(function() { 
-// 			self.onTabClick(event, $(this)); 
-// 		});
-// 		$(window).scroll(() => { this.onScroll(); });
-// 		$(window).resize(() => { this.onResize(); });
-// 	}
+	constructor() {
+		this.currentId = null;
+		this.currentTab = null;
+		this.tabContainerHeight = 70;
+		let self = this;
+		$('.et-hero-tab').click(function() { 
+			self.onTabClick(event, $(this)); 
+		});
+		$(window).scroll(() => { this.onScroll(); });
+		$(window).resize(() => { this.onResize(); });
+	}
 	
-// 	onTabClick(event, element) {
-// 		event.preventDefault();
-// 		let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
-// 		$('html, body').animate({ scrollTop: scrollTop }, 600);
-// 	}
+	onTabClick(event, element) {
+		event.preventDefault();
+		let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
+		$('html, body').animate({ scrollTop: scrollTop }, 600);
+	}
 	
-// 	onScroll() {
-// 		this.checkTabContainerPosition();
-//     this.findCurrentTabSelector();
-// 	}
+	onScroll() {
+		this.checkTabContainerPosition();
+    this.findCurrentTabSelector();
+	}
 	
-// 	onResize() {
-// 		if(this.currentId) {
-// 			this.setSliderCss();
-// 		}
-// 	}
+	onResize() {
+		if(this.currentId) {
+			this.setSliderCss();
+		}
+	}
 	
-// 	checkTabContainerPosition() {
-// 		let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
-// 		if($(window).scrollTop() > offset) {
-// 			$('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
-// 		} 
-// 		else {
-// 			$('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
-// 		}
-// 	}
+	checkTabContainerPosition() {
+		let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
+		if($(window).scrollTop() > offset) {
+			$('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
+		} 
+		else {
+			$('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
+		}
+	}
 	
-// 	findCurrentTabSelector(element) {
-// 		let newCurrentId;
-// 		let newCurrentTab;
-// 		let self = this;
-// 		$('.et-hero-tab').each(function() {
-// 			let id = $(this).attr('href');
-// 			let offsetTop = $(id).offset().top - self.tabContainerHeight;
-// 			let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
-// 			if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
-// 				newCurrentId = id;
-// 				newCurrentTab = $(this);
-// 			}
-// 		});
-// 		if(this.currentId != newCurrentId || this.currentId === null) {
-// 			this.currentId = newCurrentId;
-// 			this.currentTab = newCurrentTab;
-// 			this.setSliderCss();
-// 		}
-// 	}
+	findCurrentTabSelector(element) {
+		let newCurrentId;
+		let newCurrentTab;
+		let self = this;
+		$('.et-hero-tab').each(function() {
+			let id = $(this).attr('href');
+			let offsetTop = $(id).offset().top - self.tabContainerHeight;
+			let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
+			if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+				newCurrentId = id;
+				newCurrentTab = $(this);
+			}
+		});
+		if(this.currentId != newCurrentId || this.currentId === null) {
+			this.currentId = newCurrentId;
+			this.currentTab = newCurrentTab;
+			this.setSliderCss();
+		}
+	}
 	
-// 	setSliderCss() {
-// 		let width = 0;
-// 		let left = 0;
-// 		if(this.currentTab) {
-// 			width = this.currentTab.css('width');
-// 			left = this.currentTab.offset().left;
-// 		}
-// 		$('.et-hero-tab-slider').css('width', width);
-// 		$('.et-hero-tab-slider').css('left', left);
-// 	}
+	setSliderCss() {
+		let width = 0;
+		let left = 0;
+		if(this.currentTab) {
+			width = this.currentTab.css('width');
+			left = this.currentTab.offset().left;
+		}
+		$('.et-hero-tab-slider').css('width', width);
+		$('.et-hero-tab-slider').css('left', left);
+	}
 	
-// }
+}
 
-// new StickyNavigation();
+new StickyNavigation();
 
 const TIME_SECONDS = 40;
 
@@ -117,6 +117,11 @@ var ALREADY_GUESSED_WORDS = [];
 var REMAINING_WORDS = WORDLIST;
 var NEW_GUESSED_WORDS = [];
 
+console.log(WORDLIST)
+console.log(ALREADY_GUESSED_WORDS)
+console.log(REMAINING_WORDS)
+console.log(NEW_GUESSED_WORDS)
+
 function load(){
 	WORDLIST = raw_list.split(', ');
 	REMAINING_WORDS = WORDLIST;	
@@ -125,8 +130,7 @@ function load(){
 		text += "<li>" + WORDLIST[i] + "</li>";
 	  }
 	text+= '</ul>'
-	document.getElementById("display_wordlist").innerHTML = text;	
-	
+	document.getElementById("display_wordlist").innerHTML = text;		
 }
 
 function refresh_init(){
@@ -162,6 +166,7 @@ function add_guessed_words(){
 	var input = document.getElementById("input_guessed_words").value;	
 	let already_guessed_words_var = input.split(', ');
 	for (i = 0; i < already_guessed_words_var.length; i++) {
+		console.log(ALREADY_GUESSED_WORDS)
 		ALREADY_GUESSED_WORDS.push(already_guessed_words_var[i]);
 	  }
 	refresh_init()
@@ -172,7 +177,8 @@ function display_next_word_to_guess(){
 	var element = document.getElementById("word_to_guess");	
 	content = element.textContent;
 
-	if (content != ''){		
+	if (content != ''){	
+		console.log(NEW_GUESSED_WORDS)	
 		NEW_GUESSED_WORDS.push(content)		
 		REMAINING_WORDS = REMAINING_WORDS.filter(e => e !== content);
 		text = '<ul>'
