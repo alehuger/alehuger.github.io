@@ -159,11 +159,11 @@ function display_shuffled_next_word(){
 }
 
 function refresh_guessed_words(){
-	text = '<ul>'
+	text = '<ol>'
 	for (i = 0; i < NEW_GUESSED_WORDS.length; i++) {
 		text += "<li>" + NEW_GUESSED_WORDS[i] + "</li>";
 	}
-	text+= '</ul>'
+	text+= '</ol>'
 	document.getElementById("new_guessed_words").innerHTML= text;
 }
 
@@ -173,7 +173,7 @@ function refresh_guessed_words(){
 
 function report_number(){
 	text = '<p> Newly Guessed Words : ' + NEW_GUESSED_WORDS.length + '</p>' +'<p> Remaining Words to Guess : ' + WORDLIST.length + '</p>';			
-	button = "<button onclick='copy_clipboard()'>Copy Wordlist Hexcode!</button>";
+	button = "<button class='btn btn-warning' onclick='copy_clipboard()'>Copy Wordlist Hexcode!</button>";
 	all = text + button;
 	document.getElementById("report-number").innerHTML= all;
 }

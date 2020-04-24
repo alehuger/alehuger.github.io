@@ -1,3 +1,5 @@
+@font-face { font-family: GT-Haptik-Medium; src: url("/assets/fonts/GT-Haptik-Regular.woff") format("woff"); }
+
 .webpage { font-family: 'Titillium Web', sans-serif; }
 
 .tabs { display: flex; flex-direction: column; align-items: center; height: 18vh; justify-content: flex-start; position: relative; background: #eee; text-align: center; padding: 1rem 2rem; }
@@ -107,9 +109,11 @@
 @media only screen and (min-width: 320px) and (max-width: 1000px) { .tabs { height: 9vh; } }
 
 /* @media (min-width: 800px) { .tabs{ h1 { font-size: 3rem; } h3 { font-size: 1rem; } } .tab { font-size: 1rem; } } @media (max-width: 1300px) { .body{ .tabs{ height: 12vh; padding:0 0;  h1{ font-size: 1.5rem; } } .tab { font-size: 1rem; } .post-categories li { margin-top: 5px } .profile-container{ img{ padding: 0rem; } i{ font-size: 2.0em; } } .cv-illustrated-container { h2{ font-size: 1rem; } } } } @media screen and (max-width: 480px) { .posts, .post-container { margin-left: 20px; margin-right: 20px; } } */
+#timesup { background-color: #0E343D; font-family: 'GT-Haptik-Medium'; }
+
 #timesup h1 { display: inline; margin: 1em; border-radius: 25px; padding: 1em; background-color: lightgray; }
 
-#timesup h5 { text-decoration: underline; }
+#timesup h5 { font-weight: bold; margin-bottom: 2em; font-size: x-large; }
 
 #timesup .jumbotron { margin: 1em; margin-top: 2em; border: 2em; left: 50%; padding: 0.5rem 1rem; padding-bottom: 3em; text-align: center; }
 
@@ -129,10 +133,26 @@
 
 #hexcode { font-size: xx-small; white-space: nowrap; overflow: hidden; max-width: 300px; border-left: 1em solid transparent; border-right: 1em solid transparent; text-overflow: ellipsis; border: 1em; padding: 2em; }
 
-.countdown-timer { color: green; font-weight: 900; font-size: xx-large; background-color: whitesmoke; border-radius: 25px; }
+.countdown-timer { color: #FED441; font-weight: 900; font-size: xx-large; border-style: solid; border-color: whitesmoke; border-radius: 35px; }
 
 #display_guessed_words { padding-top: 1em; font-style: italic; }
 
-#word_to_guess { font-weight: bold; font-size: x-large; padding: 0.5em; color: #FFA500; }
+#word_to_guess { font-weight: bold; font-size: xxx-large; padding: 0.5em; color: #FED441; }
+
+.logo { margin: 6em; border: 3em; height: 12em; }
+
+#wordlist_code_generator { color: #DF2152; margin: 2em; border: 2em; padding-bottom: 10em; }
+
+#game-setup { color: whitesmoke; margin: 4em; margin-left: 12em; margin-right: 12em; padding-top: 2em; padding-bottom: 2em; font-size: large; border-style: solid; border-color: #FED441; text-align: center; }
+
+#game-setup button { height: 4em; width: 7em; margin-top: 3em; }
+
+#game-run { color: whitesmoke; margin: 4em; margin-left: 12em; margin-right: 12em; padding-top: 2em; padding-bottom: 2em; font-size: large; border-style: solid; border-color: #FED441; text-align: center; }
+
+#game-run button { height: 4em; width: 7em; margin-top: 3em; }
+
+#initialize_wordlist_div { padding-bottom: 7em; }
+
+#report { padding: 1em; font-weight: bold; font-size: x-large; color: #FED441; text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

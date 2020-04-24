@@ -1,6 +1,13 @@
-.webpage {
-    font-family: 'Titillium Web', sans-serif;
+@font-face {
+    font-family: GT-Haptik-Medium;
+    src: url('/assets/fonts/GT-Haptik-Regular.woff') format('woff');
+} 
+
+.webpage {    
+    font-family: 'Titillium Web', sans-serif;     
 }
+
+
 
 
 .tabs{    
@@ -374,6 +381,9 @@ letter-spacing: 0.1rem;
 } */
 
 #timesup{
+    background-color: #0E343D;
+    font-family: 'GT-Haptik-Medium';    
+
     h1{
         display: inline;
         margin: 1em;
@@ -382,7 +392,10 @@ letter-spacing: 0.1rem;
         background-color: lightgray;        
     }
     h5{
-        text-decoration: underline;
+        // text-decoration: underline;
+        font-weight: bold;
+        margin-bottom: 2em;
+        font-size: x-large;
     }
     .jumbotron{
         margin:1em;
@@ -410,7 +423,7 @@ letter-spacing: 0.1rem;
 }
 
 #game-run{
-    display: none;
+    display: none;    
 }
 
 #report{
@@ -425,8 +438,6 @@ letter-spacing: 0.1rem;
     border: 2em;
 }
 
-
-
 #hexcode{    
     font-size: xx-small;
     white-space: nowrap;
@@ -440,11 +451,12 @@ letter-spacing: 0.1rem;
 }
 
 .countdown-timer{
-    color: green;    
+    color: #FED441;    
     font-weight: 900;
     font-size: xx-large;
-    background-color: whitesmoke;
-    border-radius: 25px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 35px;
 
 }
 
@@ -455,7 +467,68 @@ letter-spacing: 0.1rem;
 
 #word_to_guess{
     font-weight: bold;
-    font-size: x-large;
+    font-size: xxx-large;
     padding: 0.5em;
-    color: #FFA500;
+    color: #FED441;
+}
+
+.logo{
+    margin: 6em;
+    border: 3em;
+    height: 12em;
+}
+
+#wordlist_code_generator{
+    color: #DF2152;
+    margin: 2em;
+    border: 2em;
+    padding-bottom: 10em;
+}
+
+#game-setup{
+    color: whitesmoke;
+    margin: 4em;
+    margin-left: 12em;
+    margin-right: 12em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: large;
+    border-style: solid;
+    border-color: #FED441;
+    text-align: center;
+    button{
+        height: 4em;
+        width: 7em;
+        margin-top: 3em;
+    }
+}
+
+#game-run{
+    color: whitesmoke;
+    margin: 4em;
+    margin-left: 12em;
+    margin-right: 12em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: large;
+    border-style: solid;
+    border-color: #FED441;
+    text-align: center;
+    button{
+        height: 4em;
+        width: 7em;
+        margin-top: 3em;
+    }
+}
+
+#initialize_wordlist_div{
+    padding-bottom: 7em;
+}
+
+#report{
+    padding: 1em;
+    font-weight: bold;
+    font-size: x-large;
+    color: #FED441;
+    text-align: center;
 }
