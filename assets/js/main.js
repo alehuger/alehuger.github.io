@@ -36,7 +36,7 @@ var NEW_GUESSED_WORDS = [];
 var PERSONNAL_WORDLIST = [];
 
 function load(){
-	TIME_SECONDS = 5;
+	TIME_SECONDS = 45;
 	WORDLIST = [];
 	NEW_GUESSED_WORDS = [];	
 	PERSONNAL_WORDLIST = [];
