@@ -417,11 +417,26 @@ letter-spacing: 0.1rem;
     display: none;
 }
 
-#tohide{
+.tohide{
     display: none;
 }
 
-#countdown{    
+.wordlist_code_generator{
+    border: 2em;
+}
+
+
+
+#hexcode{    
+    font-size: xx-small;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 300px;
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+    text-overflow: ellipsis;
+    border: 1em;
+    padding: 2em;
 }
 
 .countdown-timer{

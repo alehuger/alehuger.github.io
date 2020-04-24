@@ -123,7 +123,11 @@
 
 #report { display: none; }
 
-#tohide { display: none; }
+.tohide { display: none; }
+
+.wordlist_code_generator { border: 2em; }
+
+#hexcode { font-size: xx-small; white-space: nowrap; overflow: hidden; max-width: 300px; border-left: 1em solid transparent; border-right: 1em solid transparent; text-overflow: ellipsis; border: 1em; padding: 2em; }
 
 .countdown-timer { color: green; font-weight: 900; font-size: xx-large; background-color: whitesmoke; border-radius: 25px; }
 

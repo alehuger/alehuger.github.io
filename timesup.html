@@ -3,7 +3,8 @@ layout: sides
 title: Time's Up !
 ---
 
-<div id='timesup'">
+<div id='timesup'>
+
     <div class="row d-flex justify-content-center">
         <h1>Time is Up Friendos!</h1>    
     </div>
@@ -12,38 +13,23 @@ title: Time's Up !
         <button type="button" class="btn btn-success" onclick="start()"> <h4>Start</h4></button>
     </div>
 
-    <div class="row" id='game-setup'>
-
-        <div class="col-md-3" id='tohide'>
+    <div class="row" id='game-setup'>        
+        <div class="col-md-6 offset-3">
             <div class="jumbotron">
-                <h5> All Words: </h5>
-                <p id="display_wordlist"></p>
-            </div>
+                <h5> Initialize wordlist with hexcode: </h5>
+                <input type='text' placeholder="ctrl-v ici, c'est carré!" id='input_wordlist_hexcode' />
+                <button onclick="generate_wordlist_hexcode()">Generate!</button>
+            </div>                                    
         </div>
-        <div class="col-md-3 offset-3">
-            <div class="jumbotron">
-                <h5> All Guessed Words: </h5>
-                <p id="display_guessed_words"> No Guesses at the moment!</p>
-                
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="jumbotron">
-                <h5> Input new guessed words: </h5>
-                <input type='text' placeholder="ctrl-v ici, c'est carré!" id='input_guessed_words' />
-                <button onclick="add_guessed_words()">Add</button>
-            </div>
-        </div>
-
     </div>    
     
     <div class="row" id='game-run'>
-        
         <div class="col-md-4 offset-2">
             <div class="jumbotron">
                 <h5> Make them guess the word: </h5>
                 <p id="word_to_guess"></p>
-                <button type="button" class="btn btn-info" onclick="display_next_word_to_guess()"> Next Word </button>                
+                <button type="button" class="btn btn-info" onclick="display_next_word_to_guess()"> Next Word </button>
+                <button type="button" class="btn btn-danger" onclick="display_shuffled_next_word()"> Re Shuffle </button>
             </div>
         </div>
         <div class="col-md-4">
@@ -57,4 +43,28 @@ title: Time's Up !
     <div id="report" class="row d-flex justify-content-center">
         <div id='report-number'></div>
     </div>
+
+    <div id="initialize_wordlist_div" class="row d-flex justify-content-center">        
+        <button class="btn btn-info" onclick="initialize_wordlist_hexcode_form()"> Create Your Wordlist Hexcode! </button>         
+    </div>
+    
+
+    <div class="tohide" id="wordlist_code_generator">   
+        
+        <div class="col-4 offset-3">
+            <h5> Generate your wordlist code: </h5>
+            <input type='text' placeholder="Add one word here!" id='input_word_wordlist'/>
+            <button onclick="add_word_wordlist()">Add</button>
+            <form id="hexcode"></form>
+            <button onclick='copy_hexcode_clipboard()'>Copy Wordlist Code!</button>
+        </div>
+        
+        <div class="col-4">                   
+            <h5> Your current wordlist: </h5>
+            <p id="display_current_wordlist"></p>
+        </div>
+       
+    </div>
+
+
 </div>
