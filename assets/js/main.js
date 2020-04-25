@@ -99,9 +99,14 @@ function start(){
 	document.getElementById('game-run').style.display = "flex"; 
 	document.getElementById('game-setup').style.display = "none";
 	document.getElementById('wordlist_code_generator').style.display = "none"; 
+	document.getElementById('custom-time').style.display = "none"; 
 	document.getElementById('initialize_wordlist_div').textContent = "";	
 	console.log('Wordlist : ', WORDLIST)
 	display_random_word_from_wordlist();
+	var custom_time = document.getElementById('custom-time');
+	if (Number.isInteger(parseInt(custom_time.value))){
+		TIME_SECONDS = parseInt(custom_time.value);
+	}	
 	
 	// start countdown
 	var countDownDate = new Date().getTime() + TIME_SECONDS * 1000;
@@ -169,23 +174,39 @@ function refresh_guessed_words(){
 
 // REPORT
 
-// 52_6f_62_69_6e_73_6f_6e_20_43_72_75_73_6f_e9_2c_20_43_68_61_72_6c_65_6d_61_67_6e_65
-
 function report_number(){
 	text = '<p> Newly Guessed Words : ' + NEW_GUESSED_WORDS.length + '</p>' +'<p> Remaining Words to Guess : ' + WORDLIST.length + '</p>';			
-	button = "<button class='btn btn-warning' onclick='copy_clipboard()'>Copy Wordlist Hexcode!</button>";
+	button = "<button class='btn btn-warning' onclick='copy_clipboard()'>Copy Report!</button>";
 	all = text + button;
 	document.getElementById("report-number").innerHTML= all;
 }
 
 function copy_clipboard(){
-	text = WORDLIST.join(', ');		
-	var hex = stringToHex(text);	
+	let nb_remain = WORDLIST.length;
+	let score = NEW_GUESSED_WORDS.length;
+	to_encode = WORDLIST.join(', ');		
+	var hex = stringToHex(to_encode);	
 	hex = hex.substring(0, hex.length -1);
+
+	text = "TURN REPORT: \n" +
+	score + " word(s) were found! \n" 
+	
+	if (nb_remain == 0){
+		text += "It is the end of the turn! \n" +
+		"Please fetch the original hexcode.";
+	}
+	else{
+		text += nb_remain + " word(s) are still to be found in that round. \n" +
+		"Next in turn: " + hex ;
+	}
+	
+	
+	
+
 
 	var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    dummy.value = hex;
+    dummy.value = text;
     dummy.select();
     document.execCommand("copy");
 	document.body.removeChild(dummy);

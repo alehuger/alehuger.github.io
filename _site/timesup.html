@@ -42,12 +42,17 @@
   
   <div id='timesup'>
     <div class="row d-flex justify-content-center">
-        <img class="logo" src="assets/docs/logo/timesup/logo.png">   
+        <a href="timesup.html"><img class="logo" src="assets/docs/logo/timesup/logo.png"></a>        
     </div>
 
     <div id="countdown" class="row d-flex justify-content-center">
-        <button type="button" class="btn btn-warning" onclick="start()"> <h4>Start</h4></button>
+        <button type="button" class="btn btn-warning" onclick="start()"> <h4>Start</h4></button>        
+    </div>           
+    <div id="custom-time-container" class="row d-flex justify-content-center">
+        <input type="text" id="custom-time" placeholder="Custom Time">
     </div>
+    
+    
 
     <div class="row" id='game-setup'>        
         <div class="col-md-6 offset-3">            
@@ -81,8 +86,8 @@
     <div class="tohide" id="wordlist_code_generator">           
         <div class="col-4 offset-3">
             <h5> Generate your wordlist code: </h5>
-            <input type='text' placeholder="Add one word here!" id='input_word_wordlist'/>
-            <button onclick="add_word_wordlist()">Add</button>
+            <input type='text' placeholder="Add one word!" id='input_word_wordlist' class="form-control"/>
+            <button id="add-button" onclick="add_word_wordlist()"> <i class="fa fa-plus"></i> </button>
             <form id="hexcode"></form>
             <button class="btn btn-warning" onclick='copy_hexcode_clipboard()'>Copy Wordlist Code!</button>
         </div>
