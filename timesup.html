@@ -18,14 +18,14 @@ title: Time's Up !
     
 
     <div class="row" id='game-setup'>        
-        <div class="col-md-6 offset-3">            
+        <div class="col-md-6 offset-3 box_design">            
                 <h5> Initialize wordlist with hexcode: </h5>
                 <input type='text' class="form-control" placeholder="ctrl-v ici, c'est carré!" id='input_wordlist_hexcode' />
                 <button class="btn btn-warning" onclick="generate_wordlist_hexcode()"> Generate! </button>            
         </div>
     </div>    
     
-    <div class="row" id='game-run'>
+    <div class="row " id='game-run'>
         <div class="col-4 offset-1">
             <h5> Make them guess the word: </h5>
             <p id="word_to_guess"></p>
@@ -38,7 +38,7 @@ title: Time's Up !
         </div>
     </div>
 
-    <div id="report" class="row d-flex justify-content-center">
+    <div id="report" class="row d-flex justify-content-center tohide">
         <div id='report-number'></div>
     </div>
 

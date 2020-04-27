@@ -1,0 +1,154 @@
+@font-face {
+    font-family: GT-Haptik-Medium;
+    src: url('/assets/fonts/GT-Haptik-Regular.woff') format('woff');
+} 
+
+#timesup{
+    background-color: #0E343D;
+    font-family: 'GT-Haptik-Medium';    
+
+    h5{       
+        font-weight: bold;
+        margin-bottom: 2em;
+        font-size: x-large;
+    }
+
+    p{
+        padding: 1em;
+    }
+
+    ul {
+        list-style-type: none;
+       }
+
+    li{
+        padding: 0.5em;
+        text-decoration: none;
+    }
+
+    .tohide{
+        display: none;
+    }
+
+    .countdown-timer{
+        color: #FED441;    
+        font-weight: 900;
+        font-size: xx-large;
+        border-style: solid;
+        border-color: whitesmoke;
+        border-radius: 35px;
+    }
+
+    .logo{
+        margin: 6em;
+        border: 3em;
+        height: 12em;
+    }
+        
+}
+
+.box_design{
+    color: whitesmoke;
+    margin: 4em;
+    margin-left: 12em;
+    margin-right: 12em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: large;
+    border-style: solid;
+    border-color: #FED441;
+    text-align: center;
+    button{
+        height: 4em;
+        width: 7em;
+        margin-top: 3em;
+    }
+}
+
+#hexcode{    
+    font-size: xx-small;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 300px;
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+    text-overflow: ellipsis;
+    border: 1em;
+    padding: 2em;
+}
+
+#report{
+    padding: 1em;
+    padding-bottom: 3em;
+    font-weight: bold;
+    font-size: x-large;
+    color: #FED441;
+    text-align: center;
+}
+
+#display_guessed_words{
+    padding-top: 1em ;
+    font-style: italic;
+}
+
+#word_to_guess{
+    font-weight: bold;
+    font-size: xxx-large;
+    padding: 0.5em;
+    color: #FED441;
+}
+
+#game-run{
+    display: none;
+    color: whitesmoke;
+    margin: 4em;
+    margin-left: 12em;
+    margin-right: 12em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: large;
+    border-style: solid;
+    border-color: #FED441;
+    text-align: center;
+    button{
+        height: 4em;
+        width: 7em;
+        margin-top: 3em;
+    }
+}
+
+#wordlist_code_generator{
+    color: #DF2152;    
+    padding-bottom: 10em;
+}
+
+#initialize_wordlist_div{
+    padding-bottom: 4em;
+}
+
+#custom-time{
+    width: 5%;
+    border-radius: 10px;
+    background-color: #0E343D;
+    color: whitesmoke;
+    text-align: center;
+    font-size: small;
+    border-style: none;
+    margin: 1em;    
+
+}
+
+#custom-time-container{
+    margin: 0;
+}
+
+#input_word_wordlist{    
+    display: inline;
+    width: 40%;
+}
+
+#add-button{
+    background-color: #0E343D;
+    color: #DF2152;
+    border-style: none;
+}

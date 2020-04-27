@@ -6,12 +6,8 @@
   <title>Time's Up !</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
 
-  <script type="text/javascript" src="/assets/js/main.js"></script>
-  <script src="/assets/js/main.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/assets/js/timesup.js"></script>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"type="text/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
-  <link rel="stylesheet" href="/assets/css/fontello.css">
   <link rel="" type="image/png" href="/assets/docs/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -55,14 +51,14 @@
     
 
     <div class="row" id='game-setup'>        
-        <div class="col-md-6 offset-3">            
+        <div class="col-md-6 offset-3 box_design">            
                 <h5> Initialize wordlist with hexcode: </h5>
                 <input type='text' class="form-control" placeholder="ctrl-v ici, c'est carré!" id='input_wordlist_hexcode' />
                 <button class="btn btn-warning" onclick="generate_wordlist_hexcode()"> Generate! </button>            
         </div>
     </div>    
     
-    <div class="row" id='game-run'>
+    <div class="row " id='game-run'>
         <div class="col-4 offset-1">
             <h5> Make them guess the word: </h5>
             <p id="word_to_guess"></p>
@@ -75,7 +71,7 @@
         </div>
     </div>
 
-    <div id="report" class="row d-flex justify-content-center">
+    <div id="report" class="row d-flex justify-content-center tohide">
         <div id='report-number'></div>
     </div>
 
