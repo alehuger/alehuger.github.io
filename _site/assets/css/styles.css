@@ -152,4 +152,10 @@
 
 #add-button { background-color: #0E343D; color: #DF2152; border-style: none; }
 
+.footer { text-align: center; color: #FED441; }
+
+.footer a { color: #DF2152; }
+
+.footer a:hover { color: #FED441; }
+
 /*# sourceMappingURL=styles.css.map */
