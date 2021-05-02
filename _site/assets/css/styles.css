@@ -144,7 +144,7 @@
 
 #initialize_wordlist_div { padding-bottom: 4em; }
 
-#custom-time { width: 5%; border-radius: 10px; background-color: #0E343D; color: whitesmoke; text-align: center; font-size: small; border-style: none; margin: 1em; }
+#custom-time { width: 15%; border-radius: 10px; background-color: #0E343D; color: whitesmoke; text-align: center; font-size: small; border-style: none; margin: 1em; }
 
 #custom-time-container { margin: 0; }
 
