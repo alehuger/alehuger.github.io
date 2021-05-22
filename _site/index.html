@@ -34,28 +34,31 @@
 <!-- End Jekyll SEO tag -->
 
   <link rel="canonical" href="http://localhost:4000/">
-  <link rel="shortcut icon" type="image/png" href="/assets/docs/favicon/apple-touch-icon-57x57.png">
-  <link rel="shortcut icon" sizes="76x76" href="/assets/docs/favicon/apple-touch-icon-ipad-76x76.png">
-  <link rel="shortcut icon" sizes="120x120" href="/assets/docs/favicon/apple-touch-icon-iphone-retina-120x120.png">
-  <link rel="shortcut icon" sizes="152x152" href="/assets/docs/favicon/apple-touch-icon-ipad-retina-152x152.png">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/docs/favicon/lls/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/docs/favicon/lls/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/docs/favicon/lls/favicon-16x16.png">
+  <link rel="manifest" href="/assets/docs/favicon/lls/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class='webpage'>
   <section class="tabs">
     <h1>AUGUSTE LEHUGER</h1>
-    <h3>Personal Projects Blog</h3>
+    <h3>Projects & Blog</h3>
     <div class="tabs-container">
-        
-        <a class="tab" href="/about" >
-            About 
-        </a>
         
         <a class="tab" href="/projects" >
             Projects 
         </a>
         
-        <a class="tab" href="/contact" >
-            Contact 
+        <a class="tab" href="/blog" >
+            Blog 
+        </a>
+        
+        <a class="tab" href="/games" >
+            Games 
         </a>
         
     </div>
@@ -73,16 +76,12 @@
         <h4><a class="" href="/about.html"> Auguste Lehuger </a> </h2>
     </div>
     
-    <p class="tagline"> Machine Learning Developer</p>
+    <p class="tagline"> Machine Learning Researcher</p>
     <i class="icon-map-marker"></i>
-    <p> <span class="ec ec-round-pushpin"></span> London, UK </p>
+    <p> <span class="ec ec-round-pushpin"></span> Paris, Fr </p>
     <div class="row">   
         <a href="https://github.com/alehuger"><i class="icon-github-circled"></i></a>
         <a href="https://linkedin.com/in/alehuger"><i class="icon-linkedin-squared"></i></a>
-    </div>
-    <div class="row" id="">   
-        <a href="timesup"><i class="fas fa-dice fa-lg"></i></a>
-        
     </div>
     
     <!-- <p>&copy; 2019</p> -->
@@ -98,8 +97,33 @@
   </li>
   
   <li id="posts-margin">
+    <a class="post-link" href="/projects/curiosity">
+      <h2> Enhanced Curiosity to explore the World </h2>
+    </a>
+    <div class="post-meta">
+      <ul class="post-categories">
+        
+        <li>Reinforcement Learning</li>
+        
+        <li>Exploration</li>
+        
+        <li>Intrinsic Motivation</li>
+        
+        <li>Animal AI</li>
+        
+      </ul>
+      <div class="post-date">12 Apr 2021
+      </div>
+    </div>
+    <div class="post">
+      <p><p>Reinforcement Learning algorithms are training agents from the reward signal it obtains. Thus, a naïve agent relies on exploration to collect its first rewards. If random action can proved to be efficient in some setting, like illustrated in <a href="https://alehuger.github.io/projects/maze_dqn">Maze DQN </a>; in settings where rewards are sparse, this proves to be overly long and hazardous. This is where curiosity comes at the rescue ! We explain the concepts in 5 points :
+<br /> <b> How can we make the most of curiosity to explore complex reward-sparse environments ? </b></p>
+</p>
+  </li>
+  
+  <li id="posts-margin">
     <a class="post-link" href="/projects/deep-q-learning">
-      <h2> Deep Reinforcement Learning in Maze Environment </h2>
+      <h2> Deep Q Learning gets out of the Maze </h2>
     </a>
     <div class="post-meta">
       <ul class="post-categories">
@@ -114,46 +138,21 @@
     </div>
     <div class="post">
       <p><p>Reinforcement learning techniques shows great potential for <a href="https://alehuger.github.io/projects/board-game-ai"> game-based AI </a> but fails to scale on real-world applications. Indeed, state space and action space become continuous and, thus, prevent any tabular-based learning. 
-Therefore, reinforcement learning agents require to be piloted by a learning decision function thus falling back on <code class="highlighter-rouge"> deep learning </code>.
-<br /> <b> How reinforcement learning and deep learning team up to give birth to an efficient real-world application agent ? </b></p>
-</p>
-  </li>
-  
-  <li id="posts-margin">
-    <a class="post-link" href="/projects/stereovision-in-radio">
-      <h2> 3D Skeleton Reconstruction from Biplanar Radiographs </h2>
-    </a>
-    <div class="post-meta">
-      <ul class="post-categories">
-        
-        <li>Computer Vision</li>
-        
-        <li>Convolutionnal Neural Nets</li>
-        
-        <li>Stereovision</li>
-        
-        <li>3D Mesh Modeling</li>
-        
-      </ul>
-      <div class="post-date">15 Sep 2019
-      </div>
-    </div>
-    <div class="post">
-      <p><p>Orthopedic Surgery experts now ask for 3D modelling of the body for their Surgery Planning. Being able to vizualise the body in all three dimensions is critical to assess vertebra rotation for example. Today radiographic imaging systems provide 2D information of vertebrae in different views. 
-<b> The challenge is to infer the most accurate 3D shape of vertebrae from these views. </b></p>
+Therefore, reinforcement learning agents require to be piloted by a learning decision function thus falling back on deep learning.
+<br /> <b> How reinforcement learning and deep learning team up to give birth to an efficient agent ? </b></p>
 </p>
   </li>
   
   <li id="posts-margin">
     <a class="post-link" href="/projects/board-game-ai">
-      <h2> Artificial Intelligence in Complete Information Board Games </h2>
+      <h2> Model-based Reinforcement Learning masters Board Games </h2>
     </a>
     <div class="post-meta">
       <ul class="post-categories">
         
         <li>Reinforcement Learning</li>
         
-        <li>Monte Carlo Search</li>
+        <li>Monte Carlo Tree Search</li>
         
         <li>Game Theory</li>
         

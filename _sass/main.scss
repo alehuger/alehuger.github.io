@@ -286,6 +286,29 @@ letter-spacing: 0.1rem;
     }
     
 }
+
+.games-container {
+    margin: 3em;
+
+    img{
+        max-height:90%;
+        max-width: 90%;
+    
+    }
+
+
+    img:hover {
+        opacity: 0.7;
+    }
+  }
+
+.box {
+    margin: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   
   /* 
     ##Device = Low Resolution Tablets, Mobiles (Landscape)

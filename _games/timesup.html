@@ -1,0 +1,79 @@
+---
+title: Time's Up !
+description: How to build a self learning agent in Complete Information Board Games ?
+layout: sides
+date: 2018-03-20
+tags: 
+- Reinforcement Learning
+- Monte Carlo Search 
+- Game Theory 
+- AlphaZero
+image_url: assets/docs/posts/images/ai2.png
+pdf_url: assets/docs/posts/pdfs/OthelloAI.pdf
+permalink: projects/board-game-ai
+---
+
+<div id='timesup'>
+    <div class="row d-flex justify-content-center">
+        <a href="timesup.html"><img class="logo" src="assets/docs/logo/timesup/logo.png"></a>        
+    </div>
+
+    <div id="countdown" class="row d-flex justify-content-center">
+        <button type="button" class="btn btn-warning" onclick="start()"> <h4>Start</h4></button>        
+    </div>           
+    <div id="custom-time-container" class="row d-flex justify-content-center">
+        <input type="text" id="custom-time" placeholder="Custom Time">
+    </div>
+
+    
+    
+    
+
+    <div class="row" id='game-setup'>        
+        <div class="col-md-6 offset-3 box_design">            
+                <h5> Initialize wordlist with hexcode: </h5>
+                <input type='text' class="form-control" placeholder="ctrl-v ici, c'est carré!" id='input_wordlist_hexcode' />
+                <button class="btn btn-warning" onclick="generate_wordlist_hexcode()"> Generate! </button>            
+        </div>
+    </div>    
+    
+    <div class="row " id='game-run'>
+        <div class="col-4 offset-1">
+            <h5> Make them guess the word: </h5>
+            <p id="word_to_guess"></p>
+            <button type="button" class="btn btn-warning" onclick="display_next_word_to_guess()"> Next Word </button>
+            <button type="button" class="btn btn-danger" onclick="display_shuffled_next_word()"> Re Shuffle </button>        
+        </div>
+        <div class="col-4 offset-2">            
+            <h5> Words you made guess: </h5>
+            <p id="new_guessed_words"></p>        
+        </div>
+    </div>
+
+    <div id="report" class="row d-flex justify-content-center tohide">
+        <div id='report-number'></div>
+    </div>
+
+    <div id="initialize_wordlist_div" class="row d-flex justify-content-center">        
+        <button class="btn btn-info" onclick="initialize_wordlist_hexcode_form()"> Create Your Wordlist Hexcode! </button>         
+    </div>
+
+    <div class="tohide" id="wordlist_code_generator">           
+        <div class="col-4 offset-3">
+            <h5> Generate your wordlist code: </h5>
+            <input type='text' placeholder="Add one word!" id='input_word_wordlist' class="form-control"/>
+            <button id="add-button" onclick="add_word_wordlist()"> <i class="fa fa-plus"></i> </button>
+            <form id="hexcode"></form>
+            <button class="btn btn-warning" onclick='copy_hexcode_clipboard()'>Copy Wordlist Code!</button>
+        </div>
+        
+        <div class="col-4">                   
+            <h5> Your current wordlist: </h5>
+            <p id="display_current_wordlist"></p>
+        </div>       
+    </div>
+
+    <div class="footer">
+        <p> Graphic Design by <a href="http://www.palomahababou.com/"> Paloma Hababou</a></p>
+    </div>
+</div>
