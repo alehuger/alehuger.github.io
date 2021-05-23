@@ -1,46 +1,7 @@
-<!doctype html>
-<html>
+---
+layout: header
+---
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-
-  <script type="text/javascript" src="/assets/js/main.js"></script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-    type="text/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
-  <link rel="stylesheet" href="/assets/css/fontello.css">
-  <link rel="" type="image/png" href="/assets/docs/favicon/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {% seo %}
-  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/docs/favicon/lls/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/docs/favicon/lls/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/docs/favicon/lls/favicon-16x16.png">
-  <link rel="manifest" href="/assets/docs/favicon/lls/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-</head>
-
-<body class='webpage'>
-    {% include navigation.html %}
-  
-    <div class="row ">
-        <div class="col-9 offset-1">
-            {{content}}
-        </div>
-        
-    
-    </div>
-    {% if jekyll.environment == 'production' %}
-    {% include analytics.html %}
-    {% endif %}
-
-</body>
-
-</html>
+<div class="col-9 offset-1">
+  {{content}}
+</div>

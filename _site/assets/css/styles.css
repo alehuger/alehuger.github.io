@@ -18,9 +18,9 @@
 
 .profile-container h1 { color: whitesmoke; font-size: 2rem; margin: 0; letter-spacing: 1rem; }
 
-.profile-container img { padding: 0.75em; }
+.profile-container img { padding: 0.75em; filter: invert(0.3); }
 
-.profile-container img:hover { filter: brightness(1.25); }
+.profile-container img:hover { filter: none; }
 
 .profile-container a { color: #000; text-decoration: none; }
 
@@ -38,7 +38,7 @@
 
 .content-container i { font-size: 9em; margin-top: 0.5em; }
 
-.content-container a { color: #000; text-decoration: none; }
+.content-container a { color: #035; text-decoration: none; }
 
 .content-container a:hover { color: #FFA500; text-decoration: none; }
 
@@ -100,7 +100,7 @@
 
 .content figcaption { display: flex; justify-content: center; }
 
-.content p { font-size: 18px; text-align: justify; }
+.content p { font-size: 20px; text-align: justify; }
 
 .games-container { margin: 3em; }
 
@@ -109,6 +109,8 @@
 .games-container img:hover { opacity: 0.7; }
 
 .box { margin: 3em; display: flex; align-items: center; justify-content: center; }
+
+.sm-box { margin: 1.5em; display: flex; align-items: center; justify-content: center; }
 
 /*  ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */

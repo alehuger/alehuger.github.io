@@ -31,14 +31,7 @@
   {% include navigation.html %}
 
   <div class="row">
-    <div class=" col-3">
-      {% include profile.html %}
-    </div>
-    <div class=" col-9">
-      <div class="content-container">
-        {{content}}
-      </div>
-    </div>
+    {{content}}    
   </div>
   {% if jekyll.environment == 'production' %}
   {% include analytics.html %}

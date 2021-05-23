@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Enhanced Curiosity to explore 3D Worlds</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+  <link rel="stylesheet" href="/assets/css/fontello.css">
+  <link rel="" type="image/png" href="/assets/docs/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Enhanced Curiosity to explore 3D Worlds | Auguste Lehuger</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Enhanced Curiosity to explore 3D Worlds" />
+<meta name="author" content="Auguste Lehuger" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to build a self learning agent in Complete Information Board Games ?" />
+<meta property="og:description" content="How to build a self learning agent in Complete Information Board Games ?" />
+<link rel="canonical" href="http://localhost:4000/projects/vae-curiosity" />
+<meta property="og:url" content="http://localhost:4000/projects/vae-curiosity" />
+<meta property="og:site_name" content="Auguste Lehuger" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-12T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Enhanced Curiosity to explore 3D Worlds" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Auguste Lehuger"},"url":"http://localhost:4000/projects/vae-curiosity","headline":"Enhanced Curiosity to explore 3D Worlds","dateModified":"2021-04-12T00:00:00+02:00","datePublished":"2021-04-12T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/vae-curiosity"},"description":"How to build a self learning agent in Complete Information Board Games ?","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="canonical" href="http://localhost:4000/projects/vae-curiosity">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/docs/favicon/lls/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/docs/favicon/lls/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/docs/favicon/lls/favicon-16x16.png">
+  <link rel="manifest" href="/assets/docs/favicon/lls/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class='webpage'>
+  <section class="tabs">
+    <h1>AUGUSTE LEHUGER</h1>
+    <h3>Projects & Blog</h3>
+    <div class="tabs-container">
+        
+        <a class="tab" href="/projects" >
+            Projects 
+        </a>
+        
+        <a class="tab" href="/blog" >
+            Blog 
+        </a>
+        
+        <a class="tab" href="/games" >
+            Games 
+        </a>
+        
+    </div>
+</section>
+
+  <div class="row">
+    <div class="col-11 offset-1">
+    <div class="content-container">
+        <div class="post-page">
+            <h1>Enhanced Curiosity to explore 3D Worlds</h1>
+            <div class="post-meta">
+                <ul class="post-categories">
+                    
+                    <li>Reinforcement Learning</li>
+                    
+                    <li>Exploration</li>
+                    
+                    <li>Intrinsic Motivation</li>
+                    
+                    <li>Animal AI</li>
+                    
+                </ul>
+                <div class="post-date">12 Apr 2021
+                </div>
+            </div>
+
+            <div class="row post-header">
+                <div class="col-8">
+                    <p style="font-size: 20px;"><p>Reinforcement Learning algorithms train an agent from the reward signal it obtains. Thus, a naïve agent relies on exploration to collect its first rewards. Random actions can proved to be efficient in some setting, like illustrated in <a href="https://alehuger.github.io/projects/maze_dqn">Maze DQN </a>. But, in environments where rewards are sparse, this exploration can prove to be overly long and hazardous. This is where curiosity comes at the rescue ! 
+<!-- We explain the concepts in 5 points : -->
+<br /> <b> How can we make the most of curiosity to explore reward-sparse environments ? </b></p>
+</p>
+                </div>
+                <div class="col-3 ">
+                    <img src="/assets/docs/posts/curiosity/images/aai.png" alt="Post Picture" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="row content">
+                <div class="col-11">
+                    
+<h2 id="1-curiosity-formalism">1. Curiosity Formalism</h2>
+
+<p>The whole idea of curiosity is to guide the agent throughout its exploration by adding an extra reward. This is called <em>intrinsic motivation</em> because it is computed by the agent itself rather than by the environment. The formalism used here is the one introduced in <a href="https://pathak22.github.io/noreward-rl/"> Curiosity-driven Exploration by Self-supervised Prediction </a> (2017). They obtain impressive results by playing Mario with no reward, implying that the agent can learn from pure curiosity. They introduce the Intrinsic Curiosity Module (ICM) that computes the curiosity reward from a current state, the action taken by the agent and the subsequent state.</p>
+
+<div class="sm-box">
+<figure>
+  <img src="/assets/docs/posts/curiosity/images/icm.png" alt="ICM Illustrated" style="width: 30em" />
+  <figcaption> Intrinsic Curiosity Module.  <em>  Source: <a href="https://pathak22.github.io/noreward-rl//"> Deepak Pathak  Blog </a> </em></figcaption>
+</figure>
+</div>
+
+<p>Curiosity is computed by a neural network that takes as input the action and an <em>encoding</em> of the current state and predicts the <em>encoding</em> of the next state. The L2 norm of the supervised loss between that prediction and the true encoding is what we call the curiosity reward :</p>
+
+<p> 
+$$ r_i = ||F(\phi(s_t), a_t) - \phi(s_{t+1})||_{L^2} $$
+</p>
+
+<h2 id="2-curiosity-relies-on-image-encoding">2. Curiosity Relies on Image Encoding</h2>
+
+<p>A curiosity survey <a href="https://arxiv.org/abs/1808.04355"> paper</a> points out that the state observation should be encoded in a compact vector. In the ICM module, the encoding is computed by an Inverse Model that tries to predict what action where chosen given the encodings of two subsequent states, denoted as Inverse Dynamics-Features (IDF). Nonetheless, the survey paper  concludes from experiences on the Atari benchmark that random feature (RF) encodings are actually pretty good because, while not sufficient, are stable and that’s really important for the curiosity signal. Does that claim still holds when we train agents in complex 3D environments ?</p>
+
+<h2 id="3-the-animal-ai-testbed--detour-tasks">3. The Animal AI Testbed : Detour Tasks</h2>
+
+<p>The perfect benchmark for the experiment is the Detour Task enviroments of the AnimalAI testbed. Detour tasks are simple cognitive tasks but hard for AI. They require moving away from a reward in order to get to it, which is impossible with a naive ‘go towards good thing’ strategy. The top 10 teams in Animal-AI Olympics averaged only 12% success in the <a href="http://animalaiolympics.com/AAI/testbed">AnimalAI Olympics </a> . They might not be the only one having a hard time on the Cylinder Task:</p>
+
+<div class="sm-box">
+<img src="/assets/docs/posts/curiosity/images/cyl-fail.gif" alt="this sloth moves" width="400" />
+</div>
+
+<p>On these tasks, Random Feature Curiosity might prove to be insufficient. Indeed, nothing prepares it to recognize 3D structures, to be invariant to brightness and transparency for example.</p>
+
+<h2 id="4-enhanced-state-representation-for-optimal-curious-exploration">4. Enhanced State representation for optimal curious exploration</h2>
+
+<!-- Preliminary experiments support the hypothesis that learning cognitive *abilities* in open-ended environments requires structured task-independent representations.  -->
+
+<ul>
+  <li>Describe VAE method !</li>
+</ul>
+
+<p>Our results show a great sample efficiency gain of VAE based curiosity compared to the two baselines IDF and RF when learning over a curriculum of increasingly complex tasks.</p>
+
+<div class="sm-box">
+<img src="/assets/docs/posts/curiosity/images/exp_vae.png" alt="Curiosity VAE Rules" width="600" />
+</div>
+
+<p>Besides, improving significantly the sample-efficiency of the training, the resulting agent performs better when evaluated on other X-Maze tasks that it as never seen:</p>
+
+<div class="box ">
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/P9qPDAinwTQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="5-transfer-to-other-detour-environments">5. Transfer to other Detour Environments</h2>
+
+<p>We also found zero-shot transfer to other detour tasks is much better with the more structured encoding (VAE than IDF or RF). Our agent is able to succeed in the Cylinder task without being trained on it !</p>
+
+<div class="box ">
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/tD0za5eAzRg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+                </div>
+            </div>
+
+            <div class="row post-header">
+                
+                <p>
+                    <a href="https://arxiv.org/pdf/2105.08568.pdf"> For more information, check the paper available here</a>
+                </p>
+                
+            </div>
+
+            <div class="row post-header">
+                
+                <p>
+                    <a href="https://github.com/alehuger/AnimalAI-Olympics"> For more information, check the github repository available here</a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>    
+  </div>
+  
+
+</body>
+
+</html>

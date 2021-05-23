@@ -9,7 +9,7 @@
 <lastmod>2019-11-20T00:00:00+01:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/projects/curiosity</loc>
+<loc>http://localhost:4000/projects/vae-curiosity</loc>
 <lastmod>2021-04-12T00:00:00+02:00</lastmod>
 </url>
 <url>
@@ -47,9 +47,5 @@
 <url>
 <loc>http://localhost:4000/google79904ce3a0dc0ff7.html</loc>
 <lastmod>2019-11-28T16:43:58+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/paper.html</loc>
-<lastmod>2021-05-02T21:08:03+02:00</lastmod>
 </url>
 </urlset>
