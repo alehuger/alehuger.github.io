@@ -337,6 +337,131 @@ letter-spacing: 0.1rem;
     .tabs{
         height: 9vh;
     }
-    
-    
-  }
+}
+
+
+
+.birthday{
+    font-family: 'Rampart One', cursive;   
+    background-image: url("/birthday/papa-star.jpeg");
+    background-size: 0.2em;
+
+    -ms-transition: background-size 10000ms ease-in;
+    transition: background-size 10000ms ease-in;
+
+    .hunt_header{
+        h1{
+            padding-top: 2em;
+            padding-bottom: 0.5em;
+            font-size: 6em;
+            text-align: center;
+        }
+        h2{
+            padding-bottom: 1em;
+            font-size: 4em;
+            text-align: center;
+        }
+    }
+
+    .ballon{
+        width: 18em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 4em;
+    }
+
+    .enigma_container{
+        font-family: 'Titillium Web', sans-serif;  
+        padding-top: 4em;
+        padding-bottom: 8em;
+
+        .to_hide{
+            visibility: visible;
+        }
+
+        .to_show{
+            visibility: hidden;
+        }
+
+        p{
+            margin-left: 10em;
+            margin-right: 10em;
+            font-size: 2em;
+            font-weight: italic;
+            text-align: center;
+        }
+        
+        .hello{
+            justify-content: center;
+            display: flex;
+
+            p{
+                font-size: 2em;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            img{
+                margin: 3em;
+                width: 20em;
+            }
+        }
+
+        .citation{
+            justify-content: center;
+            display: flex;            
+        }
+
+        .question{
+            font-weight:bold;
+            margin-top: 2em;
+        }
+
+        .portrait{
+            justify-content: center;
+            display: flex;
+            padding-bottom: 4em;
+            img{
+                width: 20em;
+                box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);                
+            }
+        }
+
+        .kyoto{
+            justify-content: center;
+            display: flex;
+
+            .row{
+                padding-bottom: 5em;
+            }
+            
+
+            table{                
+                width: 30%;                
+                border: none ; 
+                border-width: 2px;
+                // border-collapse: collapse;
+                // 3px solid purple;
+                font-size: 5em;
+                text-align: center;
+
+                input{
+                    background: transparent;
+                    
+                    text-align: center;                    
+                }
+
+            }
+        }
+
+        .elisa{
+            justify-content: center;
+            display: flex;
+            img{
+                margin: 3em;
+                width: 50em;
+            }
+        }
+    }
+}
