@@ -441,8 +441,6 @@ letter-spacing: 0.1rem;
                 width: 30%;                
                 border: none ; 
                 border-width: 2px;
-                // border-collapse: collapse;
-                // 3px solid purple;
                 font-size: 5em;
                 text-align: center;
 
@@ -452,6 +450,17 @@ letter-spacing: 0.1rem;
                     text-align: center;                    
                 }
 
+            }
+
+            .hey{
+                p{
+                    font-size: 2em;
+                    font-weight: bold;
+                    text-align: center;
+                    background-color: rgba(0, 0, 255, .2);
+                    font-family: 'Rampart One', cursive;
+                    background-color: whitesmoke
+                }                
             }
         }
 

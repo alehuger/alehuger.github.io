@@ -11,7 +11,7 @@ function check_square() {
 
 function check_soulages() {
         var val = document.getElementById("soulages").value;
-        if (val == "Soulages") {
+        if (val.toLowerCase() == "soulages") {
             $(".to_hide").css("visibility", "hidden");  
             $(".to_show").css("visibility", "visible");                   
         }
